@@ -1,0 +1,84 @@
+{
+    "id": "ghormeh_sabzi",
+    "title": "Ghormeh sabzi",
+    "description": "A traditional Persian herb stew made with a mix of sautéed herbs, kidney beans, and lamb or beef, served over rice.",
+    "imageUrl": "",
+    "servings": 5,
+    "nutritionPerServing": {
+        "calories": 320,
+        "protein": 25,
+        "carbohydrates": 20,
+        "fat": 15
+    },
+    "cookTimeMinutes": 120,
+    "classification": "Main Course",
+    "mealType": ["Lunch", "Dinner"],
+    "ingredients": [
+        {
+            "name": "Spinach",
+            "quantity": 2,
+            "unit": "bunch"
+        },
+        {
+            "name": "Parsley",
+            "quantity": 2,
+            "unit": "bunch"
+        },
+        {
+            "name": "Green onions",
+            "quantity": 2,
+            "unit": "bunch"
+        },
+        {
+            "name": "Dried fenugreek leaves",
+            "quantity": 2,
+            "unit": "tablespoon"
+        },
+        {
+            "name": "Persian dried lime",
+            "quantity": 3,
+            "unit": "count"
+        },
+        {
+            "name": "Kidney beans",
+            "quantity": 1,
+            "unit": "cup"
+        },
+        {
+            "name": "Beef or lamb",
+            "quantity": 500,
+            "unit": "grams"
+        },
+        {
+            "name": "Onion",
+            "quantity": 1,
+            "unit": "count"
+        },
+        {
+            "name": "Turmeric",
+            "quantity": 1,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Salt",
+            "quantity": 1,
+            "unit": "tablespoon"
+        },
+        {
+            "name": "Black pepper",
+            "quantity": 0.5,
+            "unit": "teaspoon"
+        }
+    ],
+    "instructions": [
+        "Soak the kidney beans in water overnight or for at least 2 hours.",
+        "Chop the herbs and sauté them in a large pot with some oil until they are wilted.",
+        "Add the chopped onion, turmeric and fenugreek leaves and cook until golden brown.",
+        "In a separate pan, add the meat and fry until browned on all sides.",
+        "Combine the sealed meat with the sautéed herbs in the large pot.",
+        "Add kidney beans and enough water to cover the ingredients.",
+        "Make small cuts in the dried limes with a knife. Add the dried limes, salt, and black pepper to the pot.",
+        "Bring to a boil, then reduce heat and simmer for 1-2 hours until the meat is tender.",
+        "Serve with traditional tahdig rice."
+    ]
+}

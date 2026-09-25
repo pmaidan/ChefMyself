@@ -1,0 +1,72 @@
+{
+    "id": "olivier_salad",
+    "title": "Olivier salad",
+    "description": "A classic Russian potato salad commonly served during festive occasions.",
+    "imageUrl": "",
+    "servings": 8,
+    "nutritionPerServing": {
+        "calories": 274,
+        "protein": 12,
+        "carbohydrates": 14,
+        "fat": 19
+    },
+    "cookTimeMinutes": 60,
+    "classification": "Side Dish",
+    "mealType": ["Lunch", "Dinner"],
+    "ingredients": [
+        {
+            "name": "Potatoes",
+            "quantity": 4,
+            "unit": "count"
+        },
+        {
+            "name": "Carrots",
+            "quantity": 2,
+            "unit": "count"
+        },
+        {
+            "name": "Canned peas",
+            "quantity": 200,
+            "unit": "grams"
+        },
+        {
+            "name": "Pickles or cucumbers",
+            "quantity": 3,
+            "unit": "count"
+        },
+        {
+            "name": "Eggs",
+            "quantity": 4,
+            "unit": "count"
+        },
+        {
+            "name": "Chicken or ham",
+            "quantity": 300,
+            "unit": "grams"
+        },
+        {
+            "name": "Mayonnaise",
+            "quantity": 120,
+            "unit": "grams"
+        },
+        {
+            "name": "Salt",
+            "quantity": 1,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Black pepper",
+            "quantity": 0.5,
+            "unit": "teaspoon"
+        }
+    ],
+    "instructions": [
+        "Chop the potatoes and carrots into small pieces.",
+        "Try to cut all the ingredients into similar sizes for even mixing and better presentation.",
+        "Boil the potatoes and carrots until tender for about 10-15 minutes after bringing to a boil.",
+        "At the same time, boil the eggs for 10 minutes after bringing to a boil until hard-boiled.",
+        "In a large bowl, mix the boiled vegetables with peas, chopped eggs, pickles/cucumbers and your choice of meat.",
+        "Add the mayonnaise, salt, and black pepper to the mixture and stir until well combined.",
+        "Chill in the refrigerator for 30 minutes before serving."
+    ]
+}
