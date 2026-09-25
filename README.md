@@ -1,30 +1,16 @@
-# ChefMyself
-ChefMyself is a responsive web application designed to simplify meal planning and grocery preparation. Users can curate daily and weekly meal plans, automatically scale ingredient quantities based on target serving sizes, track nutrition facts, and generate consolidated weekly shopping lists. This is an 8 week collaborative student project.
+# React + Vite
 
-## Key Features
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- **Dynamic Recipe Catalog:** Browse local recipes with complete ingredients and step breakdown.
-- **Portion Scaling:** Instantly recalculate ingredient amounts based on chosen serving counts.
-- **Flexible Meal Planning:** Assign meals manually to specific days or use the randomized planner.
-- **Aggregated Shopping List:** Automatically generate a combined list of all ingredients needed for the planned week.
-- **Saving Progress:** Saves meal plans locally using `localStorage` to preserve progress across visits.
-- **Responsive Layout:** Optimized user experience across desktop and mobile interfaces.
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Tech Stack
+## React Compiler
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+) / React
-- **Data Source:** JSON-based local recipe list (Stretch Goal: External Recipe API integration)
-- **Storage:** Browser `localStorage`
-- **Design:** Figma
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Timeline
+## Expanding the ESLint configuration
 
-- **Week 1:** Environment setup, hardcode the recipes
-- **Week 2:** Complete Figma Layout
-- **Week 3:** Code responsive website layout
-- **Week 4:** Dynamically render recipes, portion scaling logic
-- **Week 5:** Assignment of meals manual/random logic
-- **Week 6:** Local storage implementation, stretch goals
-- **Week 7:** Testing, debugging, documentation, presentation prep
-- **Week 8:** Presentation
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
