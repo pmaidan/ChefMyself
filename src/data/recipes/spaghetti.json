@@ -1,0 +1,72 @@
+{
+    "id": "spaghetti",
+    "title": "Spaghetti",
+    "description": "A classic Italian dish with spaghetti mixed with tomato and herb marinara sauce.",
+    "imageUrl": "",
+    "servings": 4,
+    "nutritionPerServing": {
+        "calories": 410,
+        "protein": 12,
+        "carbohydrates": 74,
+        "fat": 6
+    },
+    "cookTimeMinutes": 30,
+    "classification": "Main Course",
+    "mealType": ["Lunch", "Dinner"],
+    "ingredients": [
+        {
+            "name": "Spaghetti pasta",
+            "quantity": 400,
+            "unit": "grams"
+        },
+        {
+            "name": "Olive oil",
+            "quantity": 2,
+            "unit": "tablespoon"
+        },
+        {
+            "name": "Garlic",
+            "quantity": 4,
+            "unit": "count"
+        },
+        {
+            "name": "Crushed tomatoes",
+            "quantity": 800,
+            "unit": "grams"
+        },
+        {
+            "name": "Tomato paste",
+            "quantity": 1,
+            "unit": "tablespoon"
+        },
+        {
+            "name": "Dried basil",
+            "quantity": 1,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Dried oregano",
+            "quantity": 0.5,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Salt",
+            "quantity": 1,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Black pepper",
+            "quantity": 0.5,
+            "unit": "teaspoon"
+        }
+    ],
+    "instructions": [
+        "Bring a large pot of salted water to a boil, cook the spaghetti until al dente, and drain.",
+        "Heat olive oil in a large saucepan over medium heat and sauté the minced garlic for 1 minute until fragrant.",
+        "Stir in the tomato paste and cook for an additional minute.",
+        "Pour in the crushed tomatoes, dried basil, dried oregano, salt, and black pepper, stirring well to combine.",
+        "Reduce the heat to low, cover, and let the marinara sauce simmer for 20 minutes to allow the flavors to meld.",
+        "Toss the cooked spaghetti directly into the marinara sauce until the pasta is evenly coated.",
+        "Serve hot."
+    ]
+}

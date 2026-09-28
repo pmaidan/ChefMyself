@@ -1,0 +1,74 @@
+{
+    "id": "chicken_alfredo_pasta",
+    "title": "Chicken Alfredo pasta",
+    "description": "Rich and creamy pasta with tender chicken tossed in a garlic parmesan cream sauce and fettuccine.",
+    "imageUrl": "",
+    "servings": 4,
+    "nutritionPerServing": {
+        "calories": 680,
+        "protein": 42,
+        "carbohydrates": 52,
+        "fat": 34
+    },
+    "cookTimeMinutes": 30,
+    "classification": "Main Course",
+    "mealType": ["Lunch", "Dinner"],
+    "ingredients": [
+        {
+            "name": "Fettuccine pasta",
+            "quantity": 350,
+            "unit": "grams"
+        },
+        {
+            "name": "Chicken breast",
+            "quantity": 500,
+            "unit": "grams"
+        },
+        {
+            "name": "Butter",
+            "quantity": 4,
+            "unit": "tablespoon"
+        },
+        {
+            "name": "Heavy cream",
+            "quantity": 1.5,
+            "unit": "cups"
+        },
+        {
+            "name": "Garlic",
+            "quantity": 3,
+            "unit": "count"
+        },
+        {
+            "name": "Parmesan cheese",
+            "quantity": 1.5,
+            "unit": "cups"
+        },
+        {
+            "name": "Olive oil",
+            "quantity": 1,
+            "unit": "tablespoon"
+        },
+        {
+            "name": "Salt",
+            "quantity": 1,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Black pepper",
+            "quantity": 0.5,
+            "unit": "teaspoon"
+        }
+    ],
+    "instructions": [
+        "Bring a large pot of salted water to a boil and cook the fettuccine pasta until al dente, then drain.",
+        "Season the chicken breasts with a portion of the salt and black pepper.",
+        "Heat olive oil in a skillet over medium-high heat and sear the chicken breasts for 6 to 7 minutes per side until cooked through, then slice.",
+        "In a large pan, melt the butter over medium heat and sauté the minced garlic for 1 minute until fragrant.",
+        "Pour in the heavy cream and let it simmer gently for 3 minutes to thicken.",
+        "Stir in the grated Parmesan cheese until melted and smooth, creating a creamy sauce.",
+        "Add the remaining salt and black pepper to the sauce.",
+        "Toss the cooked fettuccine pasta into the alfredo sauce until well coated.",
+        "Top the pasta with the sliced chicken breast and serve hot."
+    ]
+}
