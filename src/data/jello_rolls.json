@@ -1,0 +1,42 @@
+{
+    "id": "jello_rolls",
+    "title": "Jello Rolls",
+    "description": "A cute, easy to make dessert",
+    "imageUrl": "",
+    "servings": 12,
+    "nutritionPerServing": {
+        "calories": 60,
+        "protein": .75,
+        "carbohydrates": 14,
+        "fat": 0
+    },
+    "cookTimeMinutes": 55,
+    "classification": "Dessert",
+    "mealType": ["Snack", "Dessert"],
+    "ingredients": [
+        {
+            "name": "Jello",
+            "quantity": 5.5,
+            "unit": "ounce"
+        },
+        {
+            "name": "Water",
+            "quantity": 0.5,
+            "unit": "cup"
+        },
+        {
+            "name": "Large Marshmellows",
+            "quantity": 12,
+            "unit": "count"
+        },
+            
+    ],
+    "instructions": 
+    [
+        "Spray 8 ot 9 inch square pan with cooking spray.",
+        "Make Jello Mix according to package directions, using 1/2 cup boiling water and 1/2 cup cold water.",
+        "Melt marshmellows and add layer ontop of jello so it lies on top, refreigerate",
+        "Loosen edges with knife dipped in warm water, create thin slices and roll up strips, place on plate and ready tp serve"
+    ]
+
+}
