@@ -47,7 +47,7 @@
         {
             "name": "Beef or lamb",
             "quantity": 500,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Onion",
@@ -61,7 +61,7 @@
         },
         {
             "name": "Salt",
-            "quantity": 1,
+            "quantity": 0.5,
             "unit": "tablespoon"
         },
         {

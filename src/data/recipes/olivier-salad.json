@@ -27,7 +27,7 @@
         {
             "name": "Canned peas",
             "quantity": 200,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Pickles or cucumbers",
@@ -42,12 +42,12 @@
         {
             "name": "Chicken or ham",
             "quantity": 300,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Mayonnaise",
             "quantity": 120,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Salt",
