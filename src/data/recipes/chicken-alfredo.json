@@ -17,12 +17,12 @@
         {
             "name": "Fettuccine pasta",
             "quantity": 350,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Chicken breast",
             "quantity": 500,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Butter",
@@ -32,7 +32,7 @@
         {
             "name": "Heavy cream",
             "quantity": 1.5,
-            "unit": "cups"
+            "unit": "cup"
         },
         {
             "name": "Garlic",
@@ -42,7 +42,7 @@
         {
             "name": "Parmesan cheese",
             "quantity": 1.5,
-            "unit": "cups"
+            "unit": "cup"
         },
         {
             "name": "Olive oil",

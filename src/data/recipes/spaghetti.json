@@ -17,10 +17,10 @@
         {
             "name": "Spaghetti pasta",
             "quantity": 400,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
-            "name": "Olive oil",
+            "name": "Olive Oil",
             "quantity": 2,
             "unit": "tablespoon"
         },
@@ -32,7 +32,7 @@
         {
             "name": "Crushed tomatoes",
             "quantity": 800,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Tomato paste",
