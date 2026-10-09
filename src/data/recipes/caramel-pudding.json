@@ -1,0 +1,57 @@
+{
+    "id": "caramel pudding",
+    "title": "caramel pudding",
+    "description": "Crème caramel is a baked egg custard dessert topped with a layer of clear liquid caramel sauce.",
+    "imageUrl": "",
+    "servings": 8,
+    "nutritionPerServing": {
+        "calories": 338,
+        "protein": 11,
+        "carbohydrates": 50,
+        "fat": 11
+    },
+    "cookTimeMinutes": 60,
+    "classification": "Side Dish",
+    "mealType": ["dessert"],
+    "ingredients": [
+        {
+            "name": "Sugar",
+            "quantity": 150,
+            "unit": "grams"
+        },
+        {
+            "name": "condensed milk",
+            "quantity": 396,
+            "unit": "grams"
+        },
+        {
+            "name": "Water",
+            "quantity": 5,
+            "unit": "grams"
+        },
+        {
+            "name": "Eggs",
+            "quantity": 5,
+            "unit": "count"
+        },
+        {
+            "name": "evaporated milk",
+            "quantity": 354,
+            "unit": "grams"
+        },
+        {
+            "name": "vanilla",
+            "quantity": 1,
+            "unit": "grams"
+        }
+       
+    ],
+    "instructions": [
+        "Add the sugar and ¼ cup of water. Cook over medium heat, stirring frequently, for about 2 minutes, or until the sugar is dissolved",
+        "Pour the caramel into an 8-inch round cake pan. Tilt and turn the pan to spread the caramel out to the edges, then set the pan aside to cool and harden while you make the custard",
+        "Combine the eggs, condensed milk, evaporated milk, and vanilla extract in a blender or a large mixing bowl.",
+        "Place the pan with the caramel in a roasting pan. Pour the milk mixture directly into the pan over the hardened caramel. Fill the roasting pan with 1 inch of hot water.",
+        "Bake for 35 to 40 minutes until the center is just set.",
+        "Chill in the refrigerator for 60 minutes before serving."
+    ]
+}
