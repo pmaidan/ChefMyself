@@ -1,0 +1,84 @@
+{
+  "id": "veggie_fried_rice",
+  "title": "Veggie fried rice",
+  "description": "A quick stir-fried rice with eggs, carrots, peas, and green onions, seasoned with soy sauce and sesame oil.",
+  "imageUrl": "",
+  "servings": 4,
+  "nutritionPerServing": {
+    "calories": 340,
+    "protein": 10,
+    "carbohydrates": 52,
+    "fat": 10
+  },
+  "cookTimeMinutes": 25,
+  "classification": "Main Course",
+  "mealType": ["Lunch", "Dinner"],
+  "ingredients": [
+    {
+      "name": "Cooked day-old rice",
+      "quantity": 4,
+      "unit": "cup"
+    },
+    {
+      "name": "Vegetable oil",
+      "quantity": 2,
+      "unit": "tablespoon"
+    },
+    {
+      "name": "Eggs",
+      "quantity": 2,
+      "unit": "count"
+    },
+    {
+      "name": "Carrot",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "name": "Frozen peas",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "name": "Bell pepper",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "name": "Garlic cloves",
+      "quantity": 3,
+      "unit": "count"
+    },
+    {
+      "name": "Green onions",
+      "quantity": 3,
+      "unit": "count"
+    },
+    {
+      "name": "Soy sauce",
+      "quantity": 3,
+      "unit": "tablespoon"
+    },
+    {
+      "name": "Sesame oil",
+      "quantity": 1,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "Black pepper",
+      "quantity": 0.5,
+      "unit": "teaspoon"
+    }
+  ],
+  "instructions": [
+    "Dice the carrot and bell pepper, mince the garlic, and slice the green onions.",
+    "Heat 1 tablespoon of vegetable oil in a large pan or wok over medium-high heat.",
+    "Beat the eggs, scramble them in the pan until just set, then move them to a plate.",
+    "Add the remaining oil, then cook the carrot and bell pepper for 3-4 minutes until tender.",
+    "Add the garlic and peas and cook for 1 minute.",
+    "Add the cold rice and break up any clumps. Stir-fry for 3-4 minutes until heated through.",
+    "Stir in the soy sauce, sesame oil, and black pepper.",
+    "Return the eggs to the pan, add most of the green onions, and toss everything together.",
+    "Serve hot, topped with the remaining green onions."
+  ]
+}
