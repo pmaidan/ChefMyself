@@ -1,0 +1,81 @@
+{
+    "id": "mongolian_beef",
+    "title": "Mongolian Beef",
+    "description": "A delicious dish with sliced beef, paired with vegetables and savory sauce, usually served over rice.",
+    "imageUrl": "",
+    "servings": 4,
+    "nutritionPerServing": {
+        "calories": 383,
+        "protein": 26,
+        "carbohydrates": 31,
+        "fat": 16
+    },
+    "cookTimeMinutes": 45,
+    "classification": "Main Course",
+    "mealType": ["Lunch", "Dinner"],
+    "ingredients": [
+        {
+            "name": "Beef",
+            "quantity": 1,
+            "unit": "pound"
+        },
+        {
+            "name": "Vegetable oil",
+            "quantity": 2,
+            "unit": "teaspoons"
+        },
+        {
+            "name": "Soy sauce",
+            "quantity": 2,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Cornstarch",
+            "quantity": 2.5,
+            "unit": "tablespoon"
+        },
+        {
+            "name": "Baking Soda",
+            "quantity": 0.25,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Brown Sugar",
+            "quantity": 0.25,
+            "unit": "cup"
+        },
+        {
+            "name": "Hot Water",
+            "quantity": 0.75,
+            "unit": "cup"
+        },
+        {
+            "name": "Ginger",
+            "quantity": 1,
+            "unit": "teaspoon"
+        },
+        {
+            "name": "Garlic Cloves",
+            "quantity": 3,
+            "unit": "count"
+        }
+        {
+           "name": "Scallions",
+           "quanity": 4,
+           "unit": "count" 
+        }
+        {
+           "name": "Dried Red Chili Peppers",
+           "quanity": 8,
+           "unit": "count" 
+        }
+    ],
+    "instructions": [
+        "Slice beef and marinate in 1tsp soy sauce, 1tsp vegetable oil, and 1/8tsp baking soda for 30 minutes.",
+        "Mix brown sugar, 1/4 cup hot water, 1tsp soy sauce, 1tsp cornstarch, and 1/8tsp baking soda in a bowl to make the sauce.",
+        "Coat beef slices in cornstarch.",
+        "Heat 2/3 cup vegetable oil in a wok over high heat, add in beef slices, sear for 1 minute intil crispy coating is accomplished, transfer onto plate.",
+        "in the same wok, use 2 tbls of oil behind, and add ginger, peppers, garlic, and scallions, stor for 30 seconds then add sauce cook until thickened enough to coat the back of a spoon",
+        "add in beef, toss for 30 seconds, plate and serve with rice."
+    ]
+}
