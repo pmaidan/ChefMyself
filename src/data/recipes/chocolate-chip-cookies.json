@@ -1,0 +1,73 @@
+{
+  "id": "chocolate_chip_cookies",
+  "title": "Chocolate chip cookies",
+  "description": "Soft and chewy classic cookies with golden edges and plenty of melted chocolate chips.",
+  "imageUrl": "",
+  "servings": 12,
+  "nutritionPerServing": {
+    "calories": 210,
+    "protein": 2,
+    "carbohydrates": 28,
+    "fat": 10
+  },
+  "cookTimeMinutes": 30,
+  "classification": "Dessert",
+  "mealType": ["Snack"],
+  "ingredients": [
+    {
+      "name": "All-purpose flour",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "name": "Baking soda",
+      "quantity": 1,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "Salt",
+      "quantity": 0.5,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "Butter, softened",
+      "quantity": 170,
+      "unit": "grams"
+    },
+    {
+      "name": "Brown sugar",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "name": "White sugar",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "name": "Egg",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "name": "Vanilla extract",
+      "quantity": 2,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "Chocolate chips",
+      "quantity": 1.5,
+      "unit": "cup"
+    }
+  ],
+  "instructions": [
+    "Preheat the oven to 180°C (350°F) and line a baking sheet with parchment paper.",
+    "Whisk the flour, baking soda, and salt together in a bowl.",
+    "In a separate bowl, beat the butter with the brown and white sugar until creamy.",
+    "Beat in the egg and vanilla extract.",
+    "Gradually mix in the dry ingredients, then fold in the chocolate chips.",
+    "Scoop tablespoon-sized balls of dough onto the baking sheet, leaving space between them.",
+    "Bake for 10-12 minutes until the edges are golden brown.",
+    "Let the cookies cool on the pan for 5 minutes before moving them to a rack."
+  ]
+}
