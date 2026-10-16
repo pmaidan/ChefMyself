@@ -1,0 +1,78 @@
+/* .app-container {
+  width: min(100%, 768px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  background-color: var(--color-secondary);
+}
+
+.app-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 1.75rem;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.page-title {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.calendar-scroll-container {
+  overflow-x: auto;
+}
+
+.calendar-grid {
+  display: grid;
+  min-width: 560px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.day-header {
+  padding: 0.5rem 0.25rem;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  text-align: center;
+}
+
+.calendar-card {
+  min-height: 7rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(43 6 30 / 12%);
+  border-radius: 0.5rem;
+  background-color: var(--color-light);
+}
+
+.day-number {
+  font-family: var(--font-accent);
+  font-weight: 600;
+}
+
+.meal-list {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  list-style: none;
+  font-size: 0.75rem;
+}
+
+.meal-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+} */
