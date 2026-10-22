@@ -1,4 +1,4 @@
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&family=Source+Sans+3&display=swap');
 
 /* Global variable tokens */
 :root {
@@ -82,10 +82,94 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.9;
 }
 
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fab:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid rgba(241, 224, 197, 0.2);
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  color: var(--color-light);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.nav-item:hover {
+  opacity: 0.9;
+}
+/* Add inside your style.css */
+
+.meal-card-outer {
+  background-color: var(--color-primary);
+  border-radius: 16px;
+  padding: 12px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.meal-card-inner {
+  background-color: var(--color-light); /* Pure white background */
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.meal-image-placeholder {
+  width: 64px;
+  height: 64px;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
 /* ==========================================================================
    4. CALENDAR PAGE STYLES
    ========================================================================== */
-.app-header {
+/* .app-header {
   background-color: var(--color-primary);
   padding: 1.25rem;
   text-align: center;
@@ -200,4 +284,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-icon.active, .nav-icon:hover {
   opacity: 1;
-}
+} */
