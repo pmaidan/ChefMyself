@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import MealCard from '../components/MealCard';
-import BottomNav from '../components/BottomNav';
+// import BottomNav from '../components/BottomNav';
 import './MealPlan.css';
 
 export default function MealPlan() {
