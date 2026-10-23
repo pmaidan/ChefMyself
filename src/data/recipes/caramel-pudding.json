@@ -17,17 +17,17 @@
         {
             "name": "Sugar",
             "quantity": 150,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "condensed milk",
             "quantity": 396,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Water",
             "quantity": 5,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "Eggs",
@@ -37,12 +37,12 @@
         {
             "name": "evaporated milk",
             "quantity": 354,
-            "unit": "grams"
+            "unit": "gram"
         },
         {
             "name": "vanilla",
             "quantity": 1,
-            "unit": "grams"
+            "unit": "gram"
         }
        
     ],
