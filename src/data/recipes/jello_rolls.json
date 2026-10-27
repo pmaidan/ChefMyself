@@ -6,7 +6,7 @@
     "servings": 12,
     "nutritionPerServing": {
         "calories": 60,
-        "protein": .75,
+        "protein": 0.75,
         "carbohydrates": 14,
         "fat": 0
     },
@@ -28,7 +28,7 @@
             "name": "Large Marshmellows",
             "quantity": 12,
             "unit": "count"
-        },
+        }
             
     ],
     "instructions": 
