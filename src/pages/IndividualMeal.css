@@ -14,7 +14,7 @@
 
 .individual-meal-image {
   width: 100%;
-  height: 160px;
+  aspect-ratio: 16 / 10; /* keeps the image proportional at any width */
   border-radius: 12px;
   object-fit: cover;
 }
@@ -42,4 +42,22 @@
   justify-content: center;
   gap: 12px;
   margin-top: 24px;
+}
+
+.individual-meal-content {
+  overflow-wrap: break-word; /* long ingredient or step text wraps */
+}
+
+@media (max-width: 360px) {
+  .individual-meal-content {
+    padding: 12px 12px 80px;
+  }
+
+  .individual-meal-buttons {
+    flex-direction: column;
+  }
+
+  .individual-meal-buttons .app-button {
+    width: 100%;
+  }
 }

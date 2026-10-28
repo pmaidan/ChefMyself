@@ -35,3 +35,19 @@
   margin: 0;
   font-size: 0.75rem;
 }
+
+.recipe-card > div:last-child {
+  min-width: 0; /* lets long titles wrap instead of overflowing the card */
+}
+
+@media (max-width: 360px) {
+  .recipe-card {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .recipe-card-image {
+    width: 64px;
+    height: 64px;
+  }
+}
