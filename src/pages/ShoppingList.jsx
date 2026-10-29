@@ -30,12 +30,9 @@ export default function ShoppingList() {
       <div className="shopping-card">
         {items.map((item) => (
           <div className="shopping-item" key={item.id}>
-
-            <div className="shopping-divider"></div>
-            
             <div className="shopping-quantity">{item.quantity}</div>
 
-            
+            <div className="shopping-divider"></div>
 
             <div
               className={`shopping-name ${item.checked ? "completed" : ""}`}
@@ -46,7 +43,9 @@ export default function ShoppingList() {
             <button
               className={`shopping-checkbox ${item.checked ? "checked" : ""}`}
               onClick={() => toggleItem(item.id)}
-              aria-label={`Mark ${item.name} as ${item.checked ? "not purchased" : "purchased"}`}
+              aria-label={`Mark ${item.name} as ${
+                item.checked ? "not purchased" : "purchased"
+              }`}
             >
               {item.checked ? "✓" : ""}
             </button>
