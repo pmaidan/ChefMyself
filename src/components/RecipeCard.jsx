@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { DEFAULT_IMAGE } from "../data/loadRecipes.js";
 import "./RecipeCard.css";
 
 export default function RecipeCard({ recipe }) {
@@ -8,11 +9,15 @@ export default function RecipeCard({ recipe }) {
 
   return (
     <div className="recipe-card" onClick={() => navigate(`/recipe/${id}`)}>
-      {imageUrl ? (
-        <img className="recipe-card-image" src={imageUrl} alt={title} />
-      ) : (
-        <div className="recipe-card-image recipe-card-placeholder" />
-      )}
+      <img
+        className="recipe-card-image"
+        src={imageUrl || DEFAULT_IMAGE}
+        alt={title}
+        onError={(e) => {
+          e.target.onerror = null; // stops a loop if the default fails too
+          e.target.src = DEFAULT_IMAGE;
+        }}
+/>
       <div>
         <h3 className="recipe-card-title">{title}</h3>
         <p className="recipe-card-category">{classification}</p>

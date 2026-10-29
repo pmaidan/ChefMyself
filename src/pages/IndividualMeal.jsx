@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 // import Navbar from "../components/Navbar.jsx"; // Turn on once Ibrahim's Navbar is merged
 import PageHeader from "../components/PageHeader.jsx";
 import Button from "../components/Button.jsx";
-import { getRecipeById } from "../data/loadRecipes.js";
+import { getRecipeById, DEFAULT_IMAGE } from "../data/loadRecipes.js";
 import "./IndividualMeal.css";
 
 export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject }) {
@@ -25,11 +25,15 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
       <PageHeader title={title} showBack />
 
       <div className="individual-meal-content">
-        {imageUrl ? (
-          <img className="individual-meal-image" src={imageUrl} alt={title} />
-        ) : (
-          <div className="individual-meal-image individual-meal-placeholder" />
-        )}
+        <img
+          className="individual-meal-image"
+          src={imageUrl || DEFAULT_IMAGE}
+          alt={title}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = DEFAULT_IMAGE;
+          }}
+        />
 
         <p>{description}</p>
 
