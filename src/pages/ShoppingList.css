@@ -1,0 +1,104 @@
+
+.shopping-page {
+  min-height: 100vh;
+  background-color: #E26D5A;
+  padding: 50px 22px 110px;
+  box-sizing: border-box;
+}
+
+.shopping-title {
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 46px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 38px 22px;
+}
+
+.shopping-card {
+  background-color: #F1E0C5;
+  border-radius: 36px;
+  min-height: 360px;
+  padding: 18px 16px;
+  box-sizing: border-box;
+}
+
+
+.shopping-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 180px;
+  padding: 20px;
+}
+
+.shopping-quantity {
+  width: 105px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #2B061E;
+}
+
+.shopping-divider {
+  width: 1px;
+  align-self: stretch;
+  background-color: #2B061E;
+  flex-shrink: 0;
+}
+
+.shopping-name {
+  flex: 1;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2B061E;
+}
+
+.shopping-name.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+
+.shopping-checkbox {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid #2B061E;
+  border-radius: 9px;
+  background: transparent;
+  color: #2B061E;
+  font-size: 30px;
+  line-height: 26px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.shopping-checkbox.checked {
+  background-color: #F1E0C5;
+}
+
+@media (max-width: 400px) {
+  .shopping-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .shopping-title {
+    margin-left: 6px;
+  }
+
+  .shopping-name {
+    font-size: 19px;
+  }
+
+  .shopping-item {
+    grid-template-columns: 48px 1px minmax(0, 1fr) 32px;
+    gap: 7px;
+  }
+
+  .shopping-checkbox {
+    width: 32px;
+    height: 32px;
+  }
+}
