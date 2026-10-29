@@ -1,10 +1,31 @@
 //usestate remembers w dropdown option user selected
 import { useState } from "react";
+const recipeFiles = import.meta.glob(
+  "../data/recipes/*.json",
+  { eager: true, import: "default" }
+);
+
+const recipes = Object.values(recipeFiles);
 
 export default function MealRandomizer() { //export allows for other files to use this file
   const [mealType, setMealType] = useState("");
   const [prepTime, setPrepTime] = useState("");
   const [calories, setCalories] = useState("");
+
+  const matchingRecipes = recipes.filter((recipe) => {
+  const matchesMealType =
+    !mealType || recipe.mealType?.includes(mealType);
+
+  const matchesPrepTime =
+    !prepTime ||
+    recipe.cookTimeMinutes <= Number(prepTime);
+
+ const matchesCalories =
+  !calories ||
+  recipe.nutritionPerServing.calories <= Number(calories);
+
+  return matchesMealType && matchesPrepTime && matchesCalories;
+});
 
   return (
     <div className="meal-randomizer">
@@ -26,6 +47,8 @@ export default function MealRandomizer() { //export allows for other files to us
           <option value="Breakfast">Breakfast</option>
           <option value="Lunch">Lunch</option>
           <option value="Dinner">Dinner</option>
+          <option value="Snack">Snack</option>
+          <option value="Dessert">Dessert</option>
         </select>
 
         <select
@@ -56,6 +79,11 @@ export default function MealRandomizer() { //export allows for other files to us
         </select>
 
       </div>
+      <p className="meal-count">
+  {matchingRecipes.length === 0
+    ? "No meals fit this criteria"
+    : `${matchingRecipes.length} meal${matchingRecipes.length === 1 ? "" : "s"} match your requirements`}
+</p>
 
       <button className="generate-button" type="button">
         Generate

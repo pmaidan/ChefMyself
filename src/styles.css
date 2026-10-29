@@ -144,3 +144,11 @@
 .generate-button:hover {
   background-color: #481331;
 }
+
+.meal-randomizer .meal-count {
+  color: #f1e0c5;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

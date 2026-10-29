@@ -5,12 +5,12 @@
     "imageUrl": "",
     "servings": 4,
     "nutritionPerServing": {
-        "calories": 383,
+        "calories": 400,
         "protein": 26,
         "carbohydrates": 31,
         "fat": 16
     },
-    "cookTimeMinutes": 45,
+    "cookTimeMinutes": 60,
     "classification": "Main Course",
     "mealType": ["Lunch", "Dinner"],
     "ingredients": [
