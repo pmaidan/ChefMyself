@@ -82,6 +82,46 @@
   margin-bottom: 20px;
 }
 
+
+.randomizer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.accept-button,
+.reject-button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accept-button {
+  background-color: #28a745;
+}
+
+.reject-button {
+  background-color: #dc3545;
+}
+
+.accept-button:hover {
+  background-color: #218838;
+}
+
+.reject-button:hover {
+  background-color: #c82333;
+}
+
+
 /* Dropdown Container */
 
 .randomizer-filters {
