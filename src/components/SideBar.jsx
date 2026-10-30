@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { ChefHat } from 'lucide-react';
 import './SideBar.css';
 
