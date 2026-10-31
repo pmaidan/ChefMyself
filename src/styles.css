@@ -1,0 +1,21 @@
+:root {
+  --coral: #e26d5a;
+  --cream: #f1e0c5;
+  --plum: #2b061e;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--plum); /* dark backdrop around the phone column on desktop */
+}
+
+#root {
+  max-width: 430px; /* about the width of an iPhone 13/14 Pro Max */
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--cream);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
+}
