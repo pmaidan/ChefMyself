@@ -28,8 +28,7 @@
             "name": "Large Marshmellows",
             "quantity": 12,
             "unit": "count"
-        }
-            
+        }    
     ],
     "instructions": 
     [
@@ -38,5 +37,4 @@
         "Melt marshmellows and add layer ontop of jello so it lies on top, refreigerate",
         "Loosen edges with knife dipped in warm water, create thin slices and roll up strips, place on plate and ready tp serve"
     ]
-
 }
