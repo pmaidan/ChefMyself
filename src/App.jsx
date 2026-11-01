@@ -1,8 +1,4 @@
-import MealPlan from "./pages/MealPlan.jsx";
-
-function App() {
-  return <MealPlan />;
-}
+function App() {}
 
 export default App;
 
