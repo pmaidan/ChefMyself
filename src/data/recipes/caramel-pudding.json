@@ -11,8 +11,8 @@
         "fat": 11
     },
     "cookTimeMinutes": 60,
-    "classification": "Side Dish",
-    "mealType": ["dessert"],
+    "classification": "Dessert",
+    "mealType": ["Dessert"],
     "ingredients": [
         {
             "name": "Sugar",
@@ -20,14 +20,14 @@
             "unit": "gram"
         },
         {
-            "name": "condensed milk",
+            "name": "Condensed milk",
             "quantity": 396,
             "unit": "gram"
         },
         {
             "name": "Water",
-            "quantity": 5,
-            "unit": "gram"
+            "quantity": 0.25,
+            "unit": "cup"
         },
         {
             "name": "Eggs",
@@ -35,14 +35,14 @@
             "unit": "count"
         },
         {
-            "name": "evaporated milk",
+            "name": "Evaporated milk",
             "quantity": 354,
             "unit": "gram"
         },
         {
-            "name": "vanilla",
+            "name": "Vanilla Extract",
             "quantity": 1,
-            "unit": "gram"
+            "unit": "teaspoon"
         }
        
     ],
