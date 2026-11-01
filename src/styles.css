@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&family=Source+Sans+3&display=swap');
+
+/* Global variable tokens */
+:root {
+    /* Colors */
+  --color-primary: #E26D5A;     
+  --color-secondary: #F1E0C5;    
+  --color-dark: #2B061E;         
+  --color-light: #FFFFFF;
+  
+  /* Fonts  */
+  --font-display: 'Playfair Display', serif; 
+  --font-body: 'Source Sans 3', sans-serif;  
+  --font-accent: 'Poppins', sans-serif;      
+}
+
+/* Global Reset & Base Styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headings using Playfair Display */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-dark);
+}
+
