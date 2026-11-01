@@ -26,7 +26,7 @@ export default function MealPlan() {
     <div className="meal-plan-page">
       {/* Top Header */}
       <header className="page-header">
-        <h1>Chef Me</h1>
+        <h1>ChefMyself</h1>
       </header>
 
       {/* Main Content Area */}
