@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import Navbar from "../components/Navbar.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Button from "../components/Button.jsx";

@@ -1,0 +1,33 @@
+{
+    "id": "french_toast",
+    "title": "French toast",
+    "description": "Thick slices of bread soaked in a cinnamon egg custard and pan-fried until golden.",
+    "imageUrl": "/images/recipes/french-toast.jpg",
+    "servings": 4,
+    "nutritionPerServing": {
+        "calories": 320,
+        "protein": 12,
+        "carbohydrates": 38,
+        "fat": 13
+    },
+    "cookTimeMinutes": 20,
+    "classification": "Main Course",
+    "mealType": ["Breakfast"],
+    "ingredients": [
+        { "name": "Bread slices", "quantity": 8, "unit": "count" },
+        { "name": "Eggs", "quantity": 3, "unit": "count" },
+        { "name": "Milk", "quantity": 0.75, "unit": "cup" },
+        { "name": "Sugar", "quantity": 1, "unit": "tablespoon" },
+        { "name": "Cinnamon", "quantity": 1, "unit": "teaspoon" },
+        { "name": "Vanilla extract", "quantity": 1, "unit": "teaspoon" },
+        { "name": "Salt", "quantity": 0.25, "unit": "teaspoon" },
+        { "name": "Butter", "quantity": 2, "unit": "tablespoon" }
+    ],
+    "instructions": [
+        "Whisk the eggs, milk, sugar, cinnamon, vanilla, and salt in a shallow dish.",
+        "Melt a little butter in a pan over medium heat.",
+        "Dip each bread slice in the egg mixture for about 10 seconds per side.",
+        "Cook the slices for 2-3 minutes per side until golden brown, adding more butter as needed.",
+        "Serve hot with syrup, powdered sugar, or berries."
+    ]
+}

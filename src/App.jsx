@@ -1,11 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { useState } from "react";
+import { RecipeProvider } from "./context/RecipeContext";
 import Home from "./pages/Home.jsx";
 import RecipeBank from "./pages/RecipeBank.jsx";
 import IndividualMeal from "./pages/IndividualMeal.jsx";
 import ShoppingList from "./pages/ShoppingList";
 import MealRandomizer from "./pages/MealRandomizer";
-import './style.css';
+import './styles.css';
 
 function App() {
   const [shoppingItems, setShoppingItems] = useState([]);
@@ -25,11 +26,16 @@ function App() {
     { path: "/", element: <Home /> },
     { path: "/recipe-bank", element: <RecipeBank /> },
     { path: "/individual-meal", element: <IndividualMeal /> },
+    { path: "/individual-recipe/:id", element: <IndividualMeal /> },
     { path: "/shopping-list", element: <ShoppingList items={shoppingItems} setItems={setShoppingItems} /> },
     { path: "/meal-randomizer", element: <MealRandomizer onAccept={acceptRecipe} /> },
   ]);
 
-  return <RouterProvider router={router} />
+  return (
+    <RecipeProvider>
+    <RouterProvider router={router} />
+  </RecipeProvider>
+  );
 }
 
 export default App;
