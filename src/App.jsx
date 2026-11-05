@@ -1,16 +1,18 @@
-// function App() {}
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/Home.jsx";
+import RecipeBank from "./pages/RecipeBank.jsx";
+import IndividualMeal from "./pages/IndividualMeal.jsx";
+import './style.css';
 
-// export default App;
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/recipe-bank", element: <RecipeBank /> },
+  { path: "/individual-meal", element: <IndividualMeal /> },
+]);
 
-import SideBar from './components/SideBar';
-import './styles.css'; // Loads global variables and resets
-
-export default function App() {
-  return (
-    <div>
-      <SideBar />
-    </div>
-  );
+function App() {
+ return <RouterProvider router={router} />;
 }
 
-// export default App;
+export default App;
+

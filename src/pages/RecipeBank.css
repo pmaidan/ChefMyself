@@ -1,0 +1,68 @@
+.recipe-bank {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--plum);
+  font-family: "Playfair Display", serif;
+}
+
+.recipe-bank-content {
+  flex: 1;
+  padding: 16px 16px 80px; /* bottom space for the nav bar */
+}
+
+@media (max-width: 360px) {
+  .recipe-bank-content {
+    padding: 12px 12px 80px;
+  }
+}
+
+.recipe-bank-search {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  border: 2px solid var(--coral);
+  border-radius: 20px;
+  background: var(--cream);
+  font-family: inherit;
+  color: var(--plum);
+}
+
+.recipe-bank-filters {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.filter-chip {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: 2px solid var(--coral);
+  border-radius: 15px;
+  background: var(--cream);
+  color: var(--coral);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.filter-chip-selected {
+  background: var(--coral);
+  color: var(--cream);
+}
+
+.recipe-bank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recipe-bank-filters {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* hides the scrollbar on the chip row */
+}
+
+.recipe-bank-filters::-webkit-scrollbar {
+  display: none;
+}
