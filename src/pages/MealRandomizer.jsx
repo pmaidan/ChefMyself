@@ -1,9 +1,11 @@
-
 import { useState } from "react";
-import jelloRolls from "../data/recipes/jello_rolls.json";
-import mongolianBeef from "../data/recipes/mongolian-beef.json";
 
-const recipes = [jelloRolls, mongolianBeef];
+const recipeFiles = import.meta.glob(
+  "../data/recipes/*.json",
+  { eager: true, import: "default" }
+);
+
+const recipes = Object.values(recipeFiles);
 
 export default function MealRandomizer({ onAccept }) {
   const [mealType, setMealType] = useState("");
@@ -14,11 +16,16 @@ export default function MealRandomizer({ onAccept }) {
 
   function getMatchingRecipes() {
     return recipes.filter((recipe) => {
-      const matchesMealType = !mealType || recipe.mealType.includes(mealType);
+      const matchesMealType =
+        !mealType || recipe.mealType?.includes(mealType);
 
-      const matchesPrepTime = !prepTime || recipe.cookTimeMinutes <= Number(prepTime);
+      const matchesPrepTime =
+        !prepTime ||
+        recipe.cookTimeMinutes <= Number(prepTime);
 
-      const matchesCalories = !calories || recipe.nutritionPerServing.calories <= Number(calories);
+      const matchesCalories =
+        !calories ||
+        recipe.nutritionPerServing.calories <= Number(calories);
 
       return matchesMealType && matchesPrepTime && matchesCalories;
     });
@@ -52,7 +59,9 @@ export default function MealRandomizer({ onAccept }) {
 
     onAccept(currentRecipe);
     setCurrentRecipe(null);
-    setMessage("Recipe accepted! Its ingredients were added to your shopping list.");
+    setMessage(
+      "Recipe accepted! Its ingredients were added to your shopping list."
+    );
   }
 
   function handleReject() {
@@ -74,7 +83,11 @@ export default function MealRandomizer({ onAccept }) {
       <div className="randomizer-filters">
         <select
           value={mealType}
-          onChange={(e) => setMealType(e.target.value)}
+          onChange={(e) => {
+            setMealType(e.target.value);
+            setCurrentRecipe(null);
+            setMessage("");
+          }}
         >
           <option value="">Meal Type</option>
           <option value="Breakfast">Breakfast</option>
@@ -86,7 +99,11 @@ export default function MealRandomizer({ onAccept }) {
 
         <select
           value={prepTime}
-          onChange={(e) => setPrepTime(e.target.value)}
+          onChange={(e) => {
+            setPrepTime(e.target.value);
+            setCurrentRecipe(null);
+            setMessage("");
+          }}
         >
           <option value="">Prep Time</option>
           {Array.from({ length: 8 }, (_, i) => {
@@ -102,7 +119,11 @@ export default function MealRandomizer({ onAccept }) {
 
         <select
           value={calories}
-          onChange={(e) => setCalories(e.target.value)}
+          onChange={(e) => {
+            setCalories(e.target.value);
+            setCurrentRecipe(null);
+            setMessage("");
+          }}
         >
           <option value="">Calories per serving</option>
           {Array.from({ length: 10 }, (_, i) => {
@@ -116,6 +137,14 @@ export default function MealRandomizer({ onAccept }) {
           })}
         </select>
       </div>
+
+      <p className="meal-count">
+        {getMatchingRecipes().length === 0
+          ? "No meals fit this criteria"
+          : `${getMatchingRecipes().length} meal${
+              getMatchingRecipes().length === 1 ? "" : "s"
+            } match your requirements`}
+      </p>
 
       <button
         className="generate-button"
@@ -140,41 +169,46 @@ export default function MealRandomizer({ onAccept }) {
 
           <h2>{currentRecipe.title}</h2>
           <p>{currentRecipe.description}</p>
-          <p>Cook time: {currentRecipe.cookTimeMinutes} minutes</p>
+
+          <p>
+            Cook time: {currentRecipe.cookTimeMinutes} minutes
+          </p>
+
           <p>
             Calories per serving:{" "}
             {currentRecipe.nutritionPerServing.calories}
           </p>
 
           <h3>Ingredients</h3>
+
           <ul>
             {currentRecipe.ingredients.map((ingredient, index) => (
               <li key={index}>
-                {ingredient.quantity} {ingredient.unit} {ingredient.name}
+                {ingredient.quantity} {ingredient.unit}{" "}
+                {ingredient.name}
               </li>
             ))}
           </ul>
 
-          
-<div className="randomizer-buttons">
-  <button
-    type="button"
-    className="accept-button"
-    onClick={handleAccept}
-    aria-label="Accept recipe"
-  >
-    ✓
-  </button>
+          <div className="randomizer-buttons">
+            <button
+              type="button"
+              className="accept-button"
+              onClick={handleAccept}
+              aria-label="Accept recipe"
+            >
+              ✓
+            </button>
 
-  <button
-    type="button"
-    className="reject-button"
-    onClick={handleReject}
-    aria-label="Reject recipe"
-  >
-    ✕
-  </button>
-</div>
+            <button
+              type="button"
+              className="reject-button"
+              onClick={handleReject}
+              aria-label="Reject recipe"
+            >
+              ✕
+            </button>
+          </div>
         </div>
       )}
     </div>
