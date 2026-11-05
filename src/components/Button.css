@@ -1,0 +1,18 @@
+.app-button {
+  padding: 12px 24px;
+  border: 2px solid var(--coral);
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.app-button-filled {
+  background: var(--coral);
+  color: var(--cream);
+}
+
+.app-button-outline {
+  background: var(--cream);
+  color: var(--coral);
+}

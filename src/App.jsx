@@ -1,13 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home.jsx";
 import RecipeBank from "./pages/RecipeBank.jsx";
-import MealPlan from "./pages/MealPlan.jsx";
+import IndividualMeal from "./pages/IndividualMeal.jsx";
 import './style.css';
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/recipe-bank", element: <RecipeBank /> },
-  { path: "/daily-meal-plan", element: <MealPlan /> },
+  { path: "/individual-meal", element: <IndividualMeal /> },
 ]);
 
 function App() {
