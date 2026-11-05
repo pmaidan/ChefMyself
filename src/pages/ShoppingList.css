@@ -23,41 +23,43 @@
   box-sizing: border-box;
 }
 
+
 .shopping-item {
-  display: grid;
-  grid-template-columns: 64px 1px minmax(0, 1fr) 34px;
-  gap: 40px;
-  align-items: start;
-  min-height: 54px;
-  color: #2B061E;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 180px;
+  padding: 20px;
 }
 
 .shopping-quantity {
-  font-family: Georgia, serif;
-  font-size: 15px;
-  line-height: 1;
-  overflow-wrap: normal;
+  width: 105px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #2B061E;
 }
 
 .shopping-divider {
-  background-color: #2B061E;
   width: 1px;
-  min-height: 300px;
-  grid-row: 1;
-} 
+  align-self: stretch;
+  background-color: #2B061E;
+  flex-shrink: 0;
+}
 
 .shopping-name {
-  font-family: Georgia, serif;
-  font-size: 23px;
+  flex: 1;
+  font-size: 30px;
   font-weight: bold;
-  line-height: 1.2;
-  overflow-wrap: anywhere;
+  color: #2B061E;
 }
 
 .shopping-name.completed {
   text-decoration: line-through;
-  opacity: 0.55;
+  opacity: 0.5;
 }
+
 
 .shopping-checkbox {
   width: 34px;

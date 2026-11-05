@@ -1,5 +1,5 @@
-//usestate remembers w dropdown option user selected
 import { useState } from "react";
+
 const recipeFiles = import.meta.glob(
   "../data/recipes/*.json",
   { eager: true, import: "default" }
@@ -7,25 +7,68 @@ const recipeFiles = import.meta.glob(
 
 const recipes = Object.values(recipeFiles);
 
-export default function MealRandomizer() { //export allows for other files to use this file
+export default function MealRandomizer({ onAccept }) {
   const [mealType, setMealType] = useState("");
   const [prepTime, setPrepTime] = useState("");
   const [calories, setCalories] = useState("");
+  const [currentRecipe, setCurrentRecipe] = useState(null);
+  const [message, setMessage] = useState("");
 
-  const matchingRecipes = recipes.filter((recipe) => {
-  const matchesMealType =
-    !mealType || recipe.mealType?.includes(mealType);
+  function getMatchingRecipes() {
+    return recipes.filter((recipe) => {
+      const matchesMealType =
+        !mealType || recipe.mealType?.includes(mealType);
 
-  const matchesPrepTime =
-    !prepTime ||
-    recipe.cookTimeMinutes <= Number(prepTime);
+      const matchesPrepTime =
+        !prepTime ||
+        recipe.cookTimeMinutes <= Number(prepTime);
 
- const matchesCalories =
-  !calories ||
-  recipe.nutritionPerServing.calories <= Number(calories);
+      const matchesCalories =
+        !calories ||
+        recipe.nutritionPerServing.calories <= Number(calories);
 
-  return matchesMealType && matchesPrepTime && matchesCalories;
-});
+      return matchesMealType && matchesPrepTime && matchesCalories;
+    });
+  }
+
+  function generateRecipe(excludeId = null) {
+    const matchingRecipes = getMatchingRecipes().filter(
+      (recipe) => recipe.id !== excludeId
+    );
+
+    if (matchingRecipes.length === 0) {
+      setCurrentRecipe(null);
+      setMessage(
+        excludeId
+          ? "No other matching recipes. Try changing your filters."
+          : "No recipes match your filters. Try different options."
+      );
+      return;
+    }
+
+    const randomIndex = Math.floor(
+      Math.random() * matchingRecipes.length
+    );
+
+    setCurrentRecipe(matchingRecipes[randomIndex]);
+    setMessage("");
+  }
+
+  function handleAccept() {
+    if (!currentRecipe) return;
+
+    onAccept(currentRecipe);
+    setCurrentRecipe(null);
+    setMessage(
+      "Recipe accepted! Its ingredients were added to your shopping list."
+    );
+  }
+
+  function handleReject() {
+    if (!currentRecipe) return;
+
+    generateRecipe(currentRecipe.id);
+  }
 
   return (
     <div className="meal-randomizer">
@@ -33,15 +76,18 @@ export default function MealRandomizer() { //export allows for other files to us
 
       <p>
         Filter your requirements
-        <br /> 
+        <br />
         and generate a new recipe to try!
       </p>
 
-      <div className="randomizer-filters"> 
-
-        <select //creates html dropdown menu
+      <div className="randomizer-filters">
+        <select
           value={mealType}
-          onChange={(e) => setMealType(e.target.value)}
+          onChange={(e) => {
+            setMealType(e.target.value);
+            setCurrentRecipe(null);
+            setMessage("");
+          }}
         >
           <option value="">Meal Type</option>
           <option value="Breakfast">Breakfast</option>
@@ -53,11 +99,16 @@ export default function MealRandomizer() { //export allows for other files to us
 
         <select
           value={prepTime}
-          onChange={(e) => setPrepTime(e.target.value)}
+          onChange={(e) => {
+            setPrepTime(e.target.value);
+            setCurrentRecipe(null);
+            setMessage("");
+          }}
         >
           <option value="">Prep Time</option>
           {Array.from({ length: 8 }, (_, i) => {
             const minutes = (i + 1) * 30;
+
             return (
               <option key={minutes} value={minutes}>
                 {minutes} mins
@@ -68,27 +119,98 @@ export default function MealRandomizer() { //export allows for other files to us
 
         <select
           value={calories}
-          onChange={(e) => setCalories(e.target.value)}
+          onChange={(e) => {
+            setCalories(e.target.value);
+            setCurrentRecipe(null);
+            setMessage("");
+          }}
         >
-          <option value="">Calories</option>
-          {Array.from({ length: 10 }, (_, i) => (
-            <option key={i} value={i * 150}>
-              {i * 100} calories
-            </option>
-          ))}
+          <option value="">Calories per serving</option>
+          {Array.from({ length: 10 }, (_, i) => {
+            const amount = (i + 1) * 100;
+
+            return (
+              <option key={amount} value={amount}>
+                {amount} calories
+              </option>
+            );
+          })}
         </select>
-
       </div>
-      <p className="meal-count">
-  {matchingRecipes.length === 0
-    ? "No meals fit this criteria"
-    : `${matchingRecipes.length} meal${matchingRecipes.length === 1 ? "" : "s"} match your requirements`}
-</p>
 
-      <button className="generate-button" type="button">
+      <p className="meal-count">
+        {getMatchingRecipes().length === 0
+          ? "No meals fit this criteria"
+          : `${getMatchingRecipes().length} meal${
+              getMatchingRecipes().length === 1 ? "" : "s"
+            } match your requirements`}
+      </p>
+
+      <button
+        className="generate-button"
+        type="button"
+        onClick={() => generateRecipe()}
+      >
         Generate
         <span className="generate-icon">+</span>
       </button>
+
+      {message && <p role="status">{message}</p>}
+
+      {currentRecipe && (
+        <div className="randomizer-recipe">
+          {currentRecipe.imageUrl && (
+            <img
+              src={currentRecipe.imageUrl}
+              alt={currentRecipe.title}
+              className="randomizer-recipe-image"
+            />
+          )}
+
+          <h2>{currentRecipe.title}</h2>
+          <p>{currentRecipe.description}</p>
+
+          <p>
+            Cook time: {currentRecipe.cookTimeMinutes} minutes
+          </p>
+
+          <p>
+            Calories per serving:{" "}
+            {currentRecipe.nutritionPerServing.calories}
+          </p>
+
+          <h3>Ingredients</h3>
+
+          <ul>
+            {currentRecipe.ingredients.map((ingredient, index) => (
+              <li key={index}>
+                {ingredient.quantity} {ingredient.unit}{" "}
+                {ingredient.name}
+              </li>
+            ))}
+          </ul>
+
+          <div className="randomizer-buttons">
+            <button
+              type="button"
+              className="accept-button"
+              onClick={handleAccept}
+              aria-label="Accept recipe"
+            >
+              ✓
+            </button>
+
+            <button
+              type="button"
+              className="reject-button"
+              onClick={handleReject}
+              aria-label="Reject recipe"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
