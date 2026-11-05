@@ -1,10 +1,9 @@
-import { useNavigate } from "react-router-dom";
-import "./RecipeCard.css";
+import { useNavigate } from 'react-router';
+import './RecipeCard.css';
 
 export default function RecipeCard({ recipe }) {
   const navigate = useNavigate();
-  const { id, title, imageUrl, classification, cookTimeMinutes, nutritionPerServing } =
-    recipe;
+  const { id, title, imageUrl, classification, cookTimeMinutes, nutritionPerServing } = recipe;
 
   return (
     <div className="recipe-card" onClick={() => navigate(`/recipe/${id}`)}>
