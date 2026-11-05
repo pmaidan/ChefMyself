@@ -6,7 +6,6 @@ import App from "./App.jsx";
 // loads styles.css
 import "./styles.css";
 
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
