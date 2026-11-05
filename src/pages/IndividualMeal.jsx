@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import Navbar from "../components/Navbar.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Button from "../components/Button.jsx";
@@ -40,6 +40,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
         </div>
 
         <h2>Nutrition per serving</h2>
+
         <ul className="individual-meal-nutrition">
           <li>Calories: {calories}</li>
           <li>Protein: {protein}g</li>
@@ -48,6 +49,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
         </ul>
 
         <h2>Ingredients</h2>
+
         <ul>
           {recipe.ingredients.map((item, index) => (
             <li key={index}>
@@ -57,6 +59,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
         </ul>
 
         <h2>Instructions</h2>
+
         <ol>
           {recipe.instructions.map((step, index) => (
             <li key={index}>{step}</li>
@@ -67,6 +70,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
           {onAccept && onReject ? (
             <>
               <Button onClick={onAccept}>Accept</Button>
+
               <Button variant="outline" onClick={onReject}>
                 Reject
               </Button>
