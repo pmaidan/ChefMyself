@@ -1,21 +1,22 @@
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&family=Poppins:wght@400;600&display=swap');
 
-/* Global variable tokens */
 :root {
-    /* Colors */
-  --color-primary: #E26D5A;     
-  --color-secondary: #F1E0C5;    
-  --color-dark: #2B061E;         
-  --color-light: #FFFFFF;
-  
-  /* Fonts  */
-  --font-display: 'Playfair Display', serif; 
-  --font-body: 'Source Sans 3', sans-serif;  
-  --font-accent: 'Poppins', sans-serif;      
+  --coral: #e26d5a;
+  --cream: #f1e0c5;
+  --plum: #2b061e;
+  --color-primary: var(--coral);
+  --color-secondary: var(--cream);
+  --color-dark: var(--plum);
+  --color-light: #ffffff;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --font-accent: 'Poppins', sans-serif;
 }
 
-/* Global Reset & Base Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,15 +26,170 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--color-dark);
-  background-color: var(--color-primary);
+  background: var(--plum);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Headings using Playfair Display */
-h1, h2, h3, h4, h5, h6 {
+#root {
+  max-width: 430px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--cream);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
-  color: var(--color-dark);
+}
+
+.home {
+  background-color: var(--coral);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.home h1 {
+  text-align: center;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: normal;
+}
+
+.home h2 {
+  background-color: var(--plum);
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  padding: 15px;
+  margin: 20px -20px;
+}
+
+.recipe-card {
+  background-color: var(--cream);
+  color: var(--plum);
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.home-buttons button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #edd7b5;
+  border-radius: 10px;
+  border: 1px solid var(--plum);
+  cursor: pointer;
+  width: 250px;
+  font-family: var(--font-body);
+}
+
+.home-buttons button:hover {
+  background-color: #eccf9f;
+}
+
+.meal-randomizer {
+  background-color: var(--coral);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.meal-randomizer h1 {
+  font-size: 40px;
+  color: var(--cream);
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.meal-randomizer p {
+  font-size: 20px;
+  color: var(--cream);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.randomizer-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.randomizer-filters select {
+  background-color: var(--cream);
+  color: var(--plum);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 22px;
+  width: 100%;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.generate-button {
+  background-color: var(--plum);
+  color: var(--cream);
+  border: none;
+  border-radius: 35px;
+  width: 250px;
+  min-height: 180px;
+  font-size: 36px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  font-family: var(--font-display);
+}
+
+.generate-icon {
+  background-color: var(--coral);
+  color: var(--plum);
+  border-radius: 10px;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.generate-button:hover {
+  background-color: #481331;
+}
+
+.meal-randomizer .meal-count {
+  color: var(--cream);
+  font-size: 18px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
