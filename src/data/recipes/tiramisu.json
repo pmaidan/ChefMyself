@@ -12,10 +12,10 @@
     },
     "cookTimeMinutes": 30,
     "classification": "Dessert",
-    "mealType": ["Dinner", "Snack"],
+    "mealType": ["Dessert"],
     "ingredients": [
         { "name": "Ladyfinger cookies", "quantity": 24, "unit": "count" },
-        { "name": "Mascarpone cheese", "quantity": 500, "unit": "grams" },
+        { "name": "Mascarpone cheese", "quantity": 500, "unit": "gram" },
         { "name": "Heavy cream", "quantity": 1, "unit": "cup" },
         { "name": "Sugar", "quantity": 0.5, "unit": "cup" },
         { "name": "Vanilla extract", "quantity": 1, "unit": "teaspoon" },
