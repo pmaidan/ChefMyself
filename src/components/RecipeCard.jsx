@@ -9,7 +9,7 @@ export default function RecipeCard({ recipe }) {
     recipe;
 
   return (
-    <div className="recipe-card" onClick={() => navigate(`/individual-recipe/${id}`)}>
+    <div className="recipe-card" onClick={() => navigate(`/recipe/${id}`)}>
       <img
         className="recipe-card-image"
         src={imageUrl || DEFAULT_IMAGE}
