@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-// import Navbar from "../components/Navbar.jsx"; // Turn on once Ibrahim's Navbar is merged
+import Navbar from "../components/Navbar.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Button from "../components/Button.jsx";
 import { getRecipeById, DEFAULT_IMAGE } from "../data/loadRecipes.js";
@@ -83,7 +83,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
         </div>
       </div>
 
-      {/* <Navbar /> */}
+      <Navbar />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import Navbar from "../components/Navbar.jsx"; // Turn on once Ibrahim's Navbar is merged
+import Navbar from "../components/Navbar.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import RecipeCard from "../components/RecipeCard.jsx";
 import { allRecipes } from "../data/loadRecipes.js";
@@ -56,7 +56,7 @@ export default function RecipeBank() {
         </div>
       </div>
 
-      {/* <Navbar /> */}
+      <Navbar />
     </div>
   );
 }
