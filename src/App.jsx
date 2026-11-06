@@ -5,6 +5,7 @@ import RecipeBank from "./pages/RecipeBank.jsx";
 import IndividualMeal from "./pages/IndividualMeal.jsx";
 import ShoppingList from "./pages/ShoppingList";
 import MealRandomizer from "./pages/MealRandomizer";
+import MealPlan from "./pages/MealPlan.jsx";
 import './styles.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     { path: "/recipe/:id", element: <IndividualMeal /> },
     { path: "/shopping-list", element: <ShoppingList items={shoppingItems} setItems={setShoppingItems} /> },
     { path: "/meal-randomizer", element: <MealRandomizer onAccept={acceptRecipe} /> },
+    { path: "/meal-plan", element: <MealPlan /> },
   ]);
 
   return <RouterProvider router={router} />
