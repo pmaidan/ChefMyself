@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { allRecipes } from "../data/loadRecipes";
+import { removeFromMealPlan } from "../logic/removeFromMealPlan";
 
 const RecipeContext = createContext();
 
@@ -20,7 +21,9 @@ export function RecipeProvider({ children }) {
 
   // Temporary stubs until the real actions are written
   const addToMealPlan = () => console.warn("To be done");
-  const removeFromMealPlan = () => console.warn("To be done");
+  const handleRemoveFromMealPlan = (recipeId) => {
+    removeFromMealPlan(recipeId, setMealPlan);
+  };
   const getRandomMeal = () => null;
 
   return (
@@ -29,7 +32,7 @@ export function RecipeProvider({ children }) {
         recipeBank,
         mealPlan,
         addToMealPlan,
-        removeFromMealPlan,
+        removeFromMealPlan: handleRemoveFromMealPlan,
         getRandomMeal,
       }}
     >
