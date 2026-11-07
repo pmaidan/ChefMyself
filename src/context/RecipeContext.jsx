@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { allRecipes } from "../data/loadRecipes";
+import { getRandomMeal as selectRandomMeal } from "../logic/getRandomMeal";
 import { removeFromMealPlan } from "../logic/removeFromMealPlan";
 
 const RecipeContext = createContext();
@@ -24,7 +25,9 @@ export function RecipeProvider({ children }) {
   const handleRemoveFromMealPlan = (recipeId) => {
     removeFromMealPlan(recipeId, setMealPlan);
   };
-  const getRandomMeal = () => null;
+  const getRandomMeal = (filters = {}, excludeId = null) => {
+  return selectRandomMeal(recipeBank, filters, excludeId);
+};
 
   return (
     <RecipeContext.Provider
