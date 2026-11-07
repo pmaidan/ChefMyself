@@ -1,18 +1,43 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
+import { useState } from "react";
+import { RecipeProvider } from "./context/RecipeContext";
 import Home from "./pages/Home.jsx";
 import RecipeBank from "./pages/RecipeBank.jsx";
 import IndividualMeal from "./pages/IndividualMeal.jsx";
-import './style.css';
-
-const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/recipe-bank", element: <RecipeBank /> },
-  { path: "/individual-meal", element: <IndividualMeal /> },
-]);
+import ShoppingList from "./pages/ShoppingList";
+import MealRandomizer from "./pages/MealRandomizer";
+import MealPlan from "./pages/MealPlan.jsx";
+import './styles.css';
 
 function App() {
- return <RouterProvider router={router} />;
+  const [shoppingItems, setShoppingItems] = useState([]);
+
+  function acceptRecipe(recipe) {
+    const newItems = recipe.ingredients.map((ingredient, index) => ({
+      id: Date.now() + index,
+      quantity: `${ingredient.quantity} ${ingredient.unit}`,
+      name: ingredient.name,
+      checked: false,
+    }));
+
+    setShoppingItems((items) => [...items, ...newItems]);
+  }
+
+  const router = createBrowserRouter([
+    { path: "/", element: <Home /> },
+    { path: "/recipe-bank", element: <RecipeBank /> },
+    { path: "/individual-meal", element: <IndividualMeal /> },
+    { path: "/recipe/:id", element: <IndividualMeal /> },
+    { path: "/shopping-list", element: <ShoppingList items={shoppingItems} setItems={setShoppingItems} /> },
+    { path: "/meal-randomizer", element: <MealRandomizer onAccept={acceptRecipe} /> },
+    { path: "/meal-plan", element: <MealPlan /> },
+  ]);
+
+  return (
+    <RecipeProvider>
+      <RouterProvider router={router} />
+    </RecipeProvider>
+  );
 }
 
 export default App;
-

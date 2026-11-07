@@ -1,43 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
 :root {
   --coral: #e26d5a;
   --cream: #f1e0c5;
   --plum: #2b061e;
-}
-* {
+  --color-primary: var(--coral);
+  --color-secondary: var(--cream);
+  --color-dark: var(--plum);
+  --color-light: #ffffff;
 
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --font-accent: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--plum); /* dark backdrop around the phone column on desktop */
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--plum);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #root {
-  max-width: 430px; /* about the width of an iPhone 13/14 Pro Max */
+  max-width: 430px;
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   background: var(--cream);
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
 
 .home {
-  background-color: #e26d5a;
+  background-color: var(--coral);
   min-height: 100vh;
   padding: 20px;
 }
 
 .home h1 {
   text-align: center;
-  color: #f1e0c5;
-  font-family: Playfair;
+  color: var(--cream);
+  font-family: var(--font-display);
   font-size: 32px;
   font-weight: normal;
 }
 
 .home h2 {
-  background-color: #2b061e;
-  color: #f1e0c5;
-  font-family: Playfair;
+  background-color: var(--plum);
+  color: var(--cream);
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: normal;
   text-align: center;
@@ -46,8 +77,8 @@ body {
 }
 
 .recipe-card {
-  background-color: #f1e0c5;
-  color: #2b061e;
+  background-color: var(--cream);
+  color: var(--plum);
   border-radius: 20px;
   padding: 10px;
   margin-bottom: 15px;
@@ -64,20 +95,20 @@ body {
 .home-buttons button {
   padding: 15px 30px;
   font-size: 18px;
-  background-color:#edd7b5;
+  background-color: #edd7b5;
   border-radius: 10px;
-  border: 1px solid #2b061e;
+  border: 1px solid var(--plum);
   cursor: pointer;
   width: 250px;
+  font-family: var(--font-body);
 }
 
 .home-buttons button:hover {
   background-color: #eccf9f;
 }
-/* Meal Randomizer Page */
 
 .meal-randomizer {
-  background-color: #e36d5b;
+  background-color: var(--coral);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -86,23 +117,59 @@ body {
   box-sizing: border-box;
 }
 
-/* Page Title */
-
 .meal-randomizer h1 {
   font-size: 40px;
-  color: #f1e0c5;
+  color: var(--cream);
   text-align: center;
   margin-bottom: 5px;
 }
 
-/* Description */
-
 .meal-randomizer p {
   font-size: 20px;
-  color: #f1e0c5;
+  color: var(--cream);
   text-align: center;
   margin-bottom: 20px;
 }
+
+
+.randomizer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.accept-button,
+.reject-button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accept-button {
+  background-color: #28a745;
+}
+
+.reject-button {
+  background-color: #dc3545;
+}
+
+.accept-button:hover {
+  background-color: #218838;
+}
+
+.reject-button:hover {
+  background-color: #c82333;
+}
+
 
 /* Dropdown Container */
 
@@ -114,24 +181,21 @@ body {
   max-width: 300px;
 }
 
-/* Dropdown Menus */
-
 .randomizer-filters select {
-  background-color: #f1e0c5;
-  color: #2b061e;
+  background-color: var(--cream);
+  color: var(--plum);
   border: none;
   border-radius: 30px;
   padding: 12px 20px;
   font-size: 22px;
   width: 100%;
   cursor: pointer;
+  font-family: var(--font-body);
 }
 
-/* Generate Button */
-
 .generate-button {
-  background-color: #2b061e;
-  color: #f1e0c5;
+  background-color: var(--plum);
+  color: var(--cream);
   border: none;
   border-radius: 35px;
   width: 250px;
@@ -144,13 +208,12 @@ body {
   justify-content: center;
   gap: 15px;
   margin-top: 25px;
+  font-family: var(--font-display);
 }
 
-/* Generate Plus Icon */
-
 .generate-icon {
-  background-color: #e36d5b;
-  color: #2b061e;
+  background-color: var(--coral);
+  color: var(--plum);
   border-radius: 10px;
   width: 65px;
   height: 65px;
@@ -168,7 +231,7 @@ body {
 }
 
 .meal-randomizer .meal-count {
-  color: #f1e0c5;
+  color: var(--cream);
   font-size: 18px;
   text-align: center;
   margin-top: 15px;
