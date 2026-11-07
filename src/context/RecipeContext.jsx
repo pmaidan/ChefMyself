@@ -1,11 +1,11 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { loadedRecipes } from "../data/recipeLoader";
+import { allRecipes } from "../data/loadRecipes";
 
 const RecipeContext = createContext();
 
 export function RecipeProvider({ children }) {
   // Initialize recipe bank
-  const [recipeBank, setRecipeBank] = useState(loadedRecipes);
+  const [recipeBank, setRecipeBank] = useState(allRecipes);
 
   // Initialize meal plan, restoring from localStorage if saved
   const [mealPlan, setMealPlan] = useState(() => {
