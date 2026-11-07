@@ -76,7 +76,7 @@ export default function MealRandomizer() {
 
             return (
               <option key={minutes} value={minutes}>
-                {minutes} mins
+                &lt; {minutes} mins
               </option>
             );
           })}
@@ -96,7 +96,7 @@ export default function MealRandomizer() {
 
             return (
               <option key={amount} value={amount}>
-                {amount} calories
+                &lt; {amount} calories
               </option>
             );
           })}
