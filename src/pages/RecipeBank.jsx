@@ -2,16 +2,17 @@ import { useState } from "react";
 import Navbar from "../components/Navbar.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import RecipeCard from "../components/RecipeCard.jsx";
-import { allRecipes } from "../data/loadRecipes.js";
+import { useRecipes } from "../context/RecipeContext.jsx";
 import "./RecipeBank.css";
 
 const FILTERS = ["All", "Breakfast", "Lunch", "Dinner", "Snack"];
 
 export default function RecipeBank() {
+  const { recipeBank } = useRecipes();
   const [search, setSearch] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("All");
 
-  const visibleRecipes = allRecipes
+  const visibleRecipes = recipeBank
     .filter((r) => r.title.toLowerCase().includes(search.toLowerCase()))
     .filter((r) => selectedFilter === "All" || r.mealType.includes(selectedFilter))
     .sort((a, b) => a.title.localeCompare(b.title));

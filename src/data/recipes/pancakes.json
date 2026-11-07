@@ -1,0 +1,34 @@
+{
+    "id": "pancakes",
+    "title": "Pancakes",
+    "description": "Fluffy golden pancakes made from scratch, great with maple syrup and fresh fruit.",
+    "imageUrl": "/images/recipes/pancakes.jpg",
+    "servings": 4,
+    "nutritionPerServing": {
+        "calories": 280,
+        "protein": 7,
+        "carbohydrates": 42,
+        "fat": 9
+    },
+    "cookTimeMinutes": 25,
+    "classification": "Main Course",
+    "mealType": ["Breakfast"],
+    "ingredients": [
+        { "name": "All-purpose flour", "quantity": 1.5, "unit": "cup" },
+        { "name": "Baking powder", "quantity": 3.5, "unit": "teaspoon" },
+        { "name": "Sugar", "quantity": 1, "unit": "tablespoon" },
+        { "name": "Salt", "quantity": 0.25, "unit": "teaspoon" },
+        { "name": "Milk", "quantity": 1.25, "unit": "cup" },
+        { "name": "Egg", "quantity": 1, "unit": "count" },
+        { "name": "Melted butter", "quantity": 3, "unit": "tablespoon" }
+    ],
+    "instructions": [
+        "Whisk the flour, baking powder, sugar, and salt together in a large bowl.",
+        "In a separate bowl, whisk the milk, egg, and melted butter.",
+        "Pour the wet ingredients into the dry ingredients and stir until just combined. A few lumps are fine.",
+        "Heat a lightly oiled pan over medium heat.",
+        "Pour about a quarter cup of batter per pancake and cook for 2-3 minutes until bubbles form on the surface.",
+        "Flip and cook for another 1-2 minutes until golden brown.",
+        "Serve warm with syrup, butter, or fruit."
+    ]
+}

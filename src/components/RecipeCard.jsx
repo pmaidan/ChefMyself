@@ -1,17 +1,24 @@
-import { useNavigate } from 'react-router';
-import './RecipeCard.css';
+import { useNavigate } from "react-router";
+import "./RecipeCard.css";
+
+const DEFAULT_IMAGE = "/images/default-plate.jpg";
 
 export default function RecipeCard({ recipe }) {
   const navigate = useNavigate();
-  const { id, title, imageUrl, classification, cookTimeMinutes, nutritionPerServing } = recipe;
+  const { id, title, imageUrl, classification, cookTimeMinutes, nutritionPerServing } =
+    recipe;
 
   return (
     <div className="recipe-card" onClick={() => navigate(`/recipe/${id}`)}>
-      {imageUrl ? (
-        <img className="recipe-card-image" src={imageUrl} alt={title} />
-      ) : (
-        <div className="recipe-card-image recipe-card-placeholder" />
-      )}
+      <img
+        className="recipe-card-image"
+        src={imageUrl || DEFAULT_IMAGE}
+        alt={title}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = DEFAULT_IMAGE;
+        }}
+      />
       <div>
         <h3 className="recipe-card-title">{title}</h3>
         <p className="recipe-card-category">{classification}</p>
