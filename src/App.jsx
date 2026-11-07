@@ -35,8 +35,8 @@ function App() {
 
   return (
     <RecipeProvider>
-    <RouterProvider router={router} />
-  </RecipeProvider>
+      <RouterProvider router={router} />
+    </RecipeProvider>
   );
 }
 
