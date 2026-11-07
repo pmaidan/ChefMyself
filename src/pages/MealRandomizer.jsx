@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useRecipes } from "../context/RecipeContext";
 
 export default function MealRandomizer() {
   const navigate = useNavigate();
-  const { getRandomMeal } = useRecipes();
+  const { getRandomMeal, recipeBank } = useRecipes();
 
   const [mealType, setMealType] = useState("");
   const [prepTime, setPrepTime] = useState("");
@@ -35,6 +34,18 @@ export default function MealRandomizer() {
       },
     });
   }
+
+  const matchingRecipes = recipeBank.filter((recipe) => {
+    const mealTypeMatch = mealType ? recipe.mealType?.includes(mealType) : true;
+    const prepTimeMatch = prepTime
+      ? recipe.cookTimeMinutes <= Number(prepTime)
+      : true;
+    const caloriesMatch = calories
+      ? recipe.nutritionPerServing.calories <= Number(calories)
+      : true;
+
+    return mealTypeMatch && prepTimeMatch && caloriesMatch;
+  }).length;
 
   return (
     <div className="meal-randomizer">
@@ -101,6 +112,11 @@ export default function MealRandomizer() {
             );
           })}
         </select>
+
+        <p className="matching-count">
+          {matchingRecipes} {matchingRecipes === 1 ? "recipe" : "recipes"} match
+          your filters
+        </p>
       </div>
 
       <button
