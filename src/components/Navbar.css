@@ -1,11 +1,15 @@
 
-.navbar {
+.navbar,
+navbar {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%); /* centers it over the phone column */
   width: 100%;
-  height: 90px;
-  background-color: #E26D5A;
+  max-width: 430px; /* same as #root in styles.css */
+  min-height: 90px;
+  padding-bottom: env(safe-area-inset-bottom, 0); /* clears the iPhone home bar */
+  background-color: #e26d5a;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -22,11 +26,13 @@
   justify-content: center;
   cursor: pointer;
   padding: 10px;
+  min-width: 44px; /* comfortable tap target */
+  min-height: 44px;
 }
 
 .nav-item svg {
-  width: 28px;
-  height: 28px;
+  width: clamp(24px, 7vw, 28px);
+  height: clamp(24px, 7vw, 28px);
   stroke-width: 1.8;
 }
 
