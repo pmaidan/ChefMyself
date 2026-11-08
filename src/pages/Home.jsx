@@ -24,7 +24,7 @@ export default function Home() {
             type="button"
             onClick={() => navigate("/meal-plan")}
           >
-            Weekly Meal Plan
+            Daily Meal Plan
           </button>
 
           <button
