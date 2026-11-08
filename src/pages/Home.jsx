@@ -1,13 +1,40 @@
-export default function Home() {
-  return (
-    <div className="home">
-      <h1>Welcome Back!</h1>
 
-      <div className="home-buttons">
-        <button type="button">Daily Meal Plan</button>
-        <button type="button">Weekly Meal Plan</button>
-        <button type="button">Shopping List</button>
+import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router";
+
+export default function Home() {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <Navbar />
+
+      <div className="home">
+        <h1>Welcome Back!</h1>
+
+        <div className="home-buttons">
+          <button
+            type="button"
+            onClick={() => navigate("/meal-plan")}
+          >
+            Daily Meal Plan
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigate("/meal-plan")}
+          >
+            Weekly Meal Plan
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigate("/shopping-list")}
+          >
+            Shopping List
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
