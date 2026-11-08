@@ -1,0 +1,34 @@
+{
+    "id": "tiramisu",
+    "title": "Tiramisu",
+    "description": "A classic Italian dessert of coffee-soaked ladyfingers layered with creamy mascarpone and dusted with cocoa.",
+    "imageUrl": "/images/recipes/tiramisu.jpg",
+    "servings": 8,
+    "nutritionPerServing": {
+        "calories": 380,
+        "protein": 6,
+        "carbohydrates": 34,
+        "fat": 25
+    },
+    "cookTimeMinutes": 30,
+    "classification": "Dessert",
+    "mealType": ["Dessert"],
+    "ingredients": [
+        { "name": "Ladyfinger cookies", "quantity": 24, "unit": "count" },
+        { "name": "Mascarpone cheese", "quantity": 500, "unit": "gram" },
+        { "name": "Heavy cream", "quantity": 1, "unit": "cup" },
+        { "name": "Sugar", "quantity": 0.5, "unit": "cup" },
+        { "name": "Vanilla extract", "quantity": 1, "unit": "teaspoon" },
+        { "name": "Strong brewed coffee, cooled", "quantity": 1.5, "unit": "cup" },
+        { "name": "Unsweetened cocoa powder", "quantity": 2, "unit": "tablespoon" }
+    ],
+    "instructions": [
+        "Whip the heavy cream with the sugar and vanilla until stiff peaks form.",
+        "Gently fold the mascarpone into the whipped cream until smooth.",
+        "Quickly dip each ladyfinger in the cooled coffee and line the bottom of a dish with a layer.",
+        "Spread half of the mascarpone mixture over the ladyfingers.",
+        "Repeat with another layer of dipped ladyfingers and the remaining mixture.",
+        "Cover and refrigerate for at least 4 hours, ideally overnight, before serving.",
+        "Dust with cocoa powder just before serving."
+    ]
+}
