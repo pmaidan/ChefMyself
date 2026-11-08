@@ -12,6 +12,8 @@
   --font-display: 'Playfair Display', serif;
   --font-body: 'Source Sans 3', sans-serif;
   --font-accent: 'Poppins', sans-serif;
+
+  --page-pad: clamp(12px, 4vw, 20px);
 }
 
 *,
@@ -22,24 +24,47 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--color-dark);
   background: var(--plum);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 #root {
   max-width: 430px;
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
   background: var(--cream);
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  max-width: 100%;
 }
 
 h1,
@@ -51,17 +76,20 @@ h6 {
   font-family: var(--font-display);
 }
 
+/* ---------- Home ---------- */
+
 .home {
   background-color: var(--coral);
   min-height: 100vh;
-  padding: 20px;
+  min-height: 100dvh;
+  padding: var(--page-pad);
 }
 
 .home h1 {
   text-align: center;
   color: var(--cream);
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: clamp(1.5rem, 7vw, 2rem);
   font-weight: normal;
 }
 
@@ -69,14 +97,15 @@ h6 {
   background-color: var(--plum);
   color: var(--cream);
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: clamp(1.15rem, 5vw, 1.5rem);
   font-weight: normal;
   text-align: center;
   padding: 15px;
-  margin: 20px -20px;
+  margin: 20px calc(-1 * var(--page-pad));
 }
 
-.recipe-card {
+/* Scoped to Home so it doesn't clash with the Recipe Bank card */
+.home .recipe-card {
   background-color: var(--cream);
   color: var(--plum);
   border-radius: 20px;
@@ -94,12 +123,13 @@ h6 {
 
 .home-buttons button {
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: clamp(1rem, 4.5vw, 1.125rem);
   background-color: #edd7b5;
   border-radius: 10px;
   border: 1px solid var(--plum);
   cursor: pointer;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   font-family: var(--font-body);
 }
 
@@ -107,30 +137,31 @@ h6 {
   background-color: #eccf9f;
 }
 
+/* ---------- Meal randomizer ---------- */
+
 .meal-randomizer {
   background-color: var(--coral);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 20px;
-  box-sizing: border-box;
+  padding: 30px var(--page-pad);
 }
 
 .meal-randomizer h1 {
-  font-size: 40px;
+  font-size: clamp(1.75rem, 8vw, 2.5rem);
   color: var(--cream);
   text-align: center;
   margin-bottom: 5px;
 }
 
 .meal-randomizer p {
-  font-size: 20px;
+  font-size: clamp(1rem, 4.5vw, 1.25rem);
   color: var(--cream);
   text-align: center;
   margin-bottom: 20px;
 }
-
 
 .randomizer-buttons {
   display: flex;
@@ -170,8 +201,7 @@ h6 {
   background-color: #c82333;
 }
 
-
-/* Dropdown Container */
+/* Dropdown container */
 
 .randomizer-filters {
   display: flex;
@@ -187,7 +217,7 @@ h6 {
   border: none;
   border-radius: 30px;
   padding: 12px 20px;
-  font-size: 22px;
+  font-size: clamp(1rem, 5vw, 1.35rem);
   width: 100%;
   cursor: pointer;
   font-family: var(--font-body);
@@ -198,9 +228,10 @@ h6 {
   color: var(--cream);
   border: none;
   border-radius: 35px;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   min-height: 180px;
-  font-size: 36px;
+  font-size: clamp(1.6rem, 8vw, 2.25rem);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -224,7 +255,7 @@ h6 {
   font-weight: bold;
 }
 
-/* Hover Effect */
+/* Hover effect */
 
 .generate-button:hover {
   background-color: #481331;
@@ -232,7 +263,7 @@ h6 {
 
 .meal-randomizer .meal-count {
   color: var(--cream);
-  font-size: 18px;
+  font-size: clamp(0.95rem, 4vw, 1.125rem);
   text-align: center;
   margin-top: 15px;
   margin-bottom: 5px;
