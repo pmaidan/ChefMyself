@@ -1,4 +1,7 @@
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px; /* Hidden off-screen */
   width: 280px;
   height: 100vh;
   background-color: var(--color-secondary);
@@ -8,6 +11,13 @@
   border-top-right-radius: 32px;
   border-bottom-right-radius: 32px;
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out; /* Smooth sliding transition */
+  z-index: 1000; /* Keeps the sidebar */
+}
+
+/* Slide into view when the hidden checkbox in RootLayout is checked */
+#sidebar-toggle:checked ~ .sidebar {
+  left: 0;
 }
 
 .sidebar-header {
@@ -51,11 +61,11 @@
   transform: translateX(4px); /* Subtle slide effect on hover */
 }
 
-/* Responsive adjustments*/
-/* For bigger screens */
+/* Responsive adjustments */
 @media (max-width: 1024px) {
   .sidebar {
     width: 240px;
+    left: -240px; /* Match the smaller width for off-screen hiding */
     padding: 2rem 1rem;
   }
   
