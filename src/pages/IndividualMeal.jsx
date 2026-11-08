@@ -1,13 +1,52 @@
-import { useParams } from "react-router";
+
+import { useState } from "react";
+import { useParams, useLocation, useNavigate } from "react-router";
+import { useRecipes } from "../context/RecipeContext";
 import Navbar from "../components/Navbar.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Button from "../components/Button.jsx";
 import { getRecipeById, DEFAULT_IMAGE } from "../data/loadRecipes.js";
 import "./IndividualMeal.css";
 
-export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject }) {
+export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
   const { id } = useParams();
-  const recipe = recipeProp || getRecipeById(id);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { getRandomMeal } = useRecipes();
+
+  const recipe =
+    recipeProp || location.state?.recipe || getRecipeById(id);
+
+  const filters = location.state?.filters || {};
+
+  const [message, setMessage] = useState("");
+
+  function handleAccept() {
+    if (!recipe || !onAccept) return;
+
+    onAccept(recipe);
+    navigate("/meal-randomizer");
+  }
+
+  function handleReject() {
+    if (!recipe) return;
+
+    const nextRecipe = getRandomMeal(filters, recipe.id);
+
+    if (!nextRecipe) {
+      setMessage("No other matching recipes. Try changing your filters.");
+      return;
+    }
+
+    setMessage("");
+
+    navigate("/individual-meal", {
+      state: {
+        recipe: nextRecipe,
+        filters,
+      },
+    });
+  }
 
   if (!recipe) {
     return (
@@ -17,8 +56,21 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
     );
   }
 
-  const { title, description, imageUrl, servings, cookTimeMinutes, classification } = recipe;
-  const { calories, protein, carbohydrates, fat } = recipe.nutritionPerServing;
+  const {
+    title,
+    description,
+    imageUrl,
+    servings,
+    cookTimeMinutes,
+    classification,
+  } = recipe;
+
+  const {
+    calories,
+    protein,
+    carbohydrates,
+    fat,
+  } = recipe.nutritionPerServing;
 
   return (
     <div className="individual-meal">
@@ -70,12 +122,14 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept, onReject 
           ))}
         </ol>
 
-        <div className="individual-meal-buttons">
-          {onAccept && onReject ? (
-            <>
-              <Button onClick={onAccept}>Accept</Button>
+        {message && <p role="status">{message}</p>}
 
-              <Button variant="outline" onClick={onReject}>
+        <div className="individual-meal-buttons">
+          {onAccept ? (
+            <>
+              <Button onClick={handleAccept}>Accept</Button>
+
+              <Button variant="outline" onClick={handleReject}>
                 Reject
               </Button>
             </>
