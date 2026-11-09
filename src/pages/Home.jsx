@@ -4,9 +4,19 @@ export default function Home() {
       <h1>Welcome Back!</h1>
 
       <div className="home-buttons">
-        <button type="button">Daily Meal Plan</button>
-        <button type="button">Weekly Meal Plan</button>
-        <button type="button">Shopping List</button>
+        <button
+          type="button"
+          onClick={() => navigate("/meal-plan")}
+        >
+          Daily Meal Plan
+        </button>
+
+        <button
+          type="button"
+          onClick={() => navigate("/shopping-list")}
+        >
+          Shopping List
+        </button>
       </div>
     </div>
   );
