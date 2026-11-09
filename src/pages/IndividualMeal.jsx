@@ -12,7 +12,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-  const { getRandomMeal } = useRecipes();
+  const { getRandomMeal, mealPlan, addToMealPlan } = useRecipes();
 
   const recipe =
     recipeProp || location.state?.recipe || getRecipeById(id);
@@ -21,11 +21,19 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
 
   const [message, setMessage] = useState("");
 
+  function handleAddToMealPlan() {
+    if (!recipe) return;
+
+    addToMealPlan(mealPlan, recipe, "Anyday", mealPlan.length + 1);
+    navigate("/meal-plan");
+  }
+
   function handleAccept() {
     if (!recipe || !onAccept) return;
 
     onAccept(recipe);
-    navigate("/meal-randomizer");
+    addToMealPlan(mealPlan, recipe, "Anyday", mealPlan.length + 1);
+    navigate("/meal-plan");
   }
 
   function handleReject() {
@@ -134,7 +142,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
               </Button>
             </>
           ) : (
-            <Button onClick={() => console.log("Add to meal plan: TODO")}>
+            <Button onClick={handleAddToMealPlan}>
               Add to Meal
             </Button>
           )}

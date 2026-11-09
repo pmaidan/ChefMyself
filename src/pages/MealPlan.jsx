@@ -1,47 +1,27 @@
 
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router'; 
+import { useNavigate } from 'react-router';
 import { Plus } from 'lucide-react';
 import MealCard from '../components/MealCard';
-import { addToMealPlan } from '../logic/addToMealPlan';
-import { removeFromMealPlan } from '../logic/removeFromMealPlan';
+import { useRecipes } from '../context/RecipeContext';
 import './MealPlan.css';
 
 export default function MealPlan() {
-  const navigate = useNavigate(); // navigate hook
-
-  const [meals, setMeals] = useState(() => {
-    const savedMeals = localStorage.getItem('mealPlan');
-    return savedMeals ? JSON.parse(savedMeals) : [
-      { id: 1, title: 'Meal #1', mealName: 'Meal' },
-      { id: 2, title: 'Meal #2', mealName: 'Meal' },
-      { id: 3, title: 'Random', mealName: 'Meal' },
-    ];
-  });
-
-  useEffect(() => {
-    localStorage.setItem('mealPlan', JSON.stringify(meals));
-  }, [meals]);
+  const navigate = useNavigate();
+  const { mealPlan, removeFromMealPlan } = useRecipes();
 
   const handleAddMeal = () => {
-    const sampleRecipe = { name: 'New Recipe', ingredients: [] };
-    const nextMealNum = meals.length + 1;
-    
-    const updatedMeals = addToMealPlan(meals, sampleRecipe, 'Anyday', nextMealNum);
-    setMeals(updatedMeals);
+    navigate('/recipe-bank');
   };
 
   const handleDelete = (idOrInstanceId) => {
-    const updatedMeals = removeFromMealPlan(meals, idOrInstanceId);
-    setMeals(updatedMeals);
+    removeFromMealPlan(mealPlan, idOrInstanceId);
   };
 
-  // 3. Handle routing based on which card is being edited
   const handleEdit = (meal) => {
-    if (meal.title === 'Random') {
-      navigate('/meal-randomizer'); // Go to the randomizer page
+    if (['random', 'random meal'].includes(meal.title?.toLowerCase())) {
+      navigate('/meal-randomizer');
     } else {
-      navigate(`/recipe/${meal.instanceId || meal.id}`); // Go to the individual meal page
+      navigate(`/recipe/${meal.id}`);
     }
   };
 
@@ -55,12 +35,12 @@ export default function MealPlan() {
         <h2 className="page-title">Meal Plan</h2>
 
         <div className="meal-list">
-          {meals.map((meal) => (
+          {mealPlan.map((meal) => (
             <MealCard
               key={meal.instanceId || meal.id}
               title={meal.title || meal.name}
-              mealName={meal.mealName || meal.name}
-              onEdit={() => handleEdit(meal)} // <-- 4. Pass the meal object to handleEdit
+              mealName={meal.mealName || meal.title || meal.name}
+              onEdit={() => handleEdit(meal)}
               onDelete={() => handleDelete(meal.instanceId || meal.id)}
             />
           ))}
