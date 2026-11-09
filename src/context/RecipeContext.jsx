@@ -1,7 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { allRecipes } from "../data/loadRecipes";
 import { getRandomMeal as selectRandomMeal } from "../logic/getRandomMeal";
-import { removeFromMealPlan } from "../logic/removeFromMealPlan";
+import { addToMealPlan as addRecipeToMealPlan } from "../logic/addToMealPlan";
+import { removeFromMealPlan as removeRecipeFromMealPlan } from "../logic/removeFromMealPlan";
 
 const RecipeContext = createContext();
 
@@ -20,14 +21,29 @@ export function RecipeProvider({ children }) {
     localStorage.setItem("mealPlan", JSON.stringify(mealPlan));
   }, [mealPlan]);
 
-  // Temporary stubs until the real actions are written
-  const addToMealPlan = () => console.warn("To be done");
-  const handleRemoveFromMealPlan = (recipeId) => {
-    removeFromMealPlan(recipeId, setMealPlan);
+  const addToMealPlan = (currentMealPlan, recipe, day, nextMealNumber) => {
+    const updatedMealPlan = addRecipeToMealPlan(
+      currentMealPlan,
+      recipe,
+      day,
+      nextMealNumber
+    );
+    setMealPlan(updatedMealPlan);
+    return updatedMealPlan;
   };
+
+  const handleRemoveFromMealPlan = (currentMealPlan, instanceId) => {
+    const updatedMealPlan = removeRecipeFromMealPlan(
+      currentMealPlan,
+      instanceId
+    );
+    setMealPlan(updatedMealPlan);
+    return updatedMealPlan;
+  };
+
   const getRandomMeal = (filters = {}, excludeId = null) => {
-  return selectRandomMeal(recipeBank, filters, excludeId);
-};
+    return selectRandomMeal(recipeBank, filters, excludeId);
+  };
 
   return (
     <RecipeContext.Provider
