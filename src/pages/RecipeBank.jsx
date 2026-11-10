@@ -5,7 +5,7 @@ import RecipeCard from "../components/RecipeCard.jsx";
 import { useRecipes } from "../context/RecipeContext.jsx";
 import "./RecipeBank.css";
 
-const FILTERS = ["All", "Breakfast", "Lunch", "Dinner", "Snack"];
+const FILTERS = ["All", "Breakfast", "Lunch", "Dinner", "Snack", "Dessert"];
 
 export default function RecipeBank() {
   const { recipeBank } = useRecipes();
@@ -14,7 +14,9 @@ export default function RecipeBank() {
 
   const visibleRecipes = recipeBank
     .filter((r) => r.title.toLowerCase().includes(search.toLowerCase()))
-    .filter((r) => selectedFilter === "All" || r.mealType.includes(selectedFilter))
+    .filter(
+      (r) => selectedFilter === "All" || r.mealType.includes(selectedFilter),
+    )
     .sort((a, b) => a.title.localeCompare(b.title));
 
   return (

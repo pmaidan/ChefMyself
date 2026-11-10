@@ -32,21 +32,65 @@
   margin-bottom: 24px;
 }
 
-/* Floating Action Button (FAB) */
-.fab-add {
-  position: fixed;
-  bottom: 90px;
-  right: 24px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  color: var(--color-light);
-  border: none;
+.meal-plan-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin: 16px auto 24px;
+}
+
+.meal-plan-actions .add-meal-button,
+.meal-plan-actions .random-meal-button {
+  flex: 1;
+  max-width: 220px;
+  min-height: 52px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  gap: 10px;
+
+  padding: 14px 12px;
+
+  background-color: var(--color-primary) !important;
+  color: var(--color-light) !important;
+
+  border: none;
+  border-radius: 16px;
+
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+
   cursor: pointer;
-  z-index: 20;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.meal-plan-actions .add-meal-button svg,
+.meal-plan-actions .random-meal-button svg {
+  color: var(--color-light);
+  flex-shrink: 0;
+}
+
+.meal-plan-actions .add-meal-button:hover,
+.meal-plan-actions .random-meal-button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 380px) {
+  .meal-plan-actions {
+    gap: 8px;
+  }
+
+  .meal-plan-actions .add-meal-button,
+  .meal-plan-actions .random-meal-button {
+    font-size: 0.9rem;
+    padding: 12px 8px;
+    gap: 6px;
+  }
 }
