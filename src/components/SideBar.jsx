@@ -1,15 +1,12 @@
-
-
-import { ChefHat } from 'lucide-react';
-import './SideBar.css';
+import { ChefHat } from "lucide-react";
+import "./SideBar.css";
 
 export default function SideBar() {
   const menuItems = [
-    { label: 'Home', href: '#' },
-    { label: 'Shopping List', href: '#' },
-    { label: 'Meal Plan', href: '#' },
-    { label: 'Weekly Plate', href: '#' },
-    { label: 'Recipe Bank', href: '#' },
+    { label: "Home", href: "/" },
+    { label: "Recipe Bank", href: "/recipe-bank" },
+    { label: "Meal Plan", href: "/meal-plan" },
+    { label: "Shopping List", href: "/shopping-list" },
   ];
 
   return (
