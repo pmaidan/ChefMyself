@@ -28,6 +28,7 @@
   flex-wrap: wrap;
   gap: 8px 16px;
   font-size: 0.85rem;
+  padding: 12px 0;
 }
 
 .individual-meal-nutrition {
@@ -48,6 +49,20 @@
   overflow-wrap: break-word; /* long ingredient or step text wraps */
 }
 
+.individual-meal-content ul,
+.individual-meal-content ol {
+  padding-left: 8px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.individual-meal-content li {
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
 @media (max-width: 360px) {
   .individual-meal-content {
     padding: 12px 12px 80px;
@@ -55,9 +70,14 @@
 
   .individual-meal-buttons {
     flex-direction: column;
+    color: var(--coral);
   }
 
   .individual-meal-buttons .app-button {
     width: 100%;
+  }
+
+  .individual-meal-buttons:hover {
+    opacity: 0.7;
   }
 }

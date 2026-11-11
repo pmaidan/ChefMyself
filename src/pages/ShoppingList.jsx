@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import "./ShoppingList.css";
 
@@ -6,20 +5,14 @@ export default function ShoppingList({ items, setItems }) {
   function toggleItem(id) {
     setItems((currentItems) =>
       currentItems.map((item) =>
-        item.id === id
-          ? { ...item, checked: !item.checked }
-          : item
-      )
+        item.id === id ? { ...item, checked: !item.checked } : item,
+      ),
     );
   }
 
   return (
     <div className="shopping-page">
-      <h1 className="shopping-title">
-        Shopping
-        <br />
-        List
-      </h1>
+      <h1 className="shopping-title">Shopping List</h1>
 
       <div className="shopping-card">
         {items.map((item) => (
@@ -28,18 +21,12 @@ export default function ShoppingList({ items, setItems }) {
 
             <div className="shopping-divider"></div>
 
-            <div
-              className={`shopping-name ${
-                item.checked ? "completed" : ""
-              }`}
-            >
+            <div className={`shopping-name ${item.checked ? "completed" : ""}`}>
               {item.name}
             </div>
 
             <button
-              className={`shopping-checkbox ${
-                item.checked ? "checked" : ""
-              }`}
+              className={`shopping-checkbox ${item.checked ? "checked" : ""}`}
               onClick={() => toggleItem(item.id)}
               aria-label={`Mark ${item.name} as ${
                 item.checked ? "not purchased" : "purchased"
