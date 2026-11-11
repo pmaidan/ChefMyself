@@ -1,23 +1,24 @@
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: -280px; /* Hidden off-screen */
-  width: 280px;
-  height: 100vh;
+  bottom: 60px; /* Leaves space for the navbar at the bottom */
+  right: 0; /* Hidden off-screen */
+  width: min(280px, 80%);
+  height: auto;
   background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
   padding: 2.5rem 1.5rem;
-  border-top-right-radius: 32px;
-  border-bottom-right-radius: 32px;
-  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
-  transition: left 0.3s ease-in-out; /* Smooth sliding transition */
+  border-top-left-radius: 32px;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%); /* Start off-screen */
+  transition: transform 0.3s ease-in-out; /* Smooth sliding transition */
   z-index: 1000; /* Keeps the sidebar */
 }
 
 /* Slide into view when the hidden checkbox in RootLayout is checked */
 #sidebar-toggle:checked ~ .sidebar {
-  left: 0;
+  transform: translateX(0); /* Slide the sidebar into view */
 }
 
 .sidebar-header {
@@ -48,11 +49,13 @@
 
 .sidebar-link {
   text-decoration: none;
-  font-family: var(--font-display); 
+  font-family: var(--font-display);
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-dark);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
   display: inline-block;
 }
 
@@ -64,11 +67,10 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .sidebar {
-    width: 240px;
-    left: -240px; /* Match the smaller width for off-screen hiding */
+    width: min(240px, 80%);
     padding: 2rem 1rem;
   }
-  
+
   .sidebar-link {
     font-size: 1.4rem; /* Slightly smaller text for medium screens */
   }

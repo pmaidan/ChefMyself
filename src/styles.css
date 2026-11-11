@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&family=Poppins:wght@400;600&display=swap");
 
 :root {
   --coral: #e26d5a;
@@ -9,9 +9,9 @@
   --color-dark: var(--plum);
   --color-light: #ffffff;
 
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'Source Sans 3', sans-serif;
-  --font-accent: 'Poppins', sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-accent: "Poppins", sans-serif;
 
   --page-pad: clamp(12px, 4vw, 20px);
 }
@@ -79,18 +79,39 @@ h6 {
 /* ---------- Home ---------- */
 
 .home {
-  background-color: var(--coral);
+  background-color: var(--cream);
   min-height: 100vh;
   min-height: 100dvh;
   padding: var(--page-pad);
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-icon {
+  color: var(--plum);
+  margin-bottom: 20px;
+}
+
+.home-description {
+  color: var(--plum);
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto 35px;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  padding-top: 10px;
+  font-family: var(--font-body);
 }
 
 .home h1 {
   text-align: center;
-  color: var(--cream);
+  color: var(--plum);
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 7vw, 2rem);
-  font-weight: normal;
+  font-size: clamp(2rem, 7vw, 2rem);
+  font-weight: bold;
 }
 
 .home h2 {
@@ -117,24 +138,25 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   margin-top: 30px;
 }
 
 .home-buttons button {
   padding: 15px 30px;
-  font-size: clamp(1rem, 4.5vw, 1.125rem);
-  background-color: #edd7b5;
-  border-radius: 10px;
-  border: 1px solid var(--plum);
+  font-size: clamp(1.7rem, 5vw, 1.7rem);
+  background-color: var(--coral);
+  color: #fff;
+  border-radius: 25px;
+  border: none;
   cursor: pointer;
   width: 100%;
-  max-width: 250px;
+  max-width: 400px;
   font-family: var(--font-body);
 }
 
 .home-buttons button:hover {
-  background-color: #eccf9f;
+  opacity: 0.8;
 }
 
 /* ---------- Meal randomizer ---------- */
@@ -151,7 +173,7 @@ h6 {
 
 .meal-randomizer h1 {
   font-size: clamp(1.75rem, 8vw, 2.5rem);
-  color: var(--cream);
+  color: #fff;
   text-align: center;
   margin-bottom: 5px;
 }

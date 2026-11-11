@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router";
 import { useRecipes } from "../context/RecipeContext";
@@ -14,8 +13,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
   const navigate = useNavigate();
   const { getRandomMeal, mealPlan, addToMealPlan } = useRecipes();
 
-  const recipe =
-    recipeProp || location.state?.recipe || getRecipeById(id);
+  const recipe = recipeProp || location.state?.recipe || getRecipeById(id);
 
   const filters = location.state?.filters || {};
 
@@ -73,12 +71,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
     classification,
   } = recipe;
 
-  const {
-    calories,
-    protein,
-    carbohydrates,
-    fat,
-  } = recipe.nutritionPerServing;
+  const { calories, protein, carbohydrates, fat } = recipe.nutritionPerServing;
 
   return (
     <div className="individual-meal">
@@ -142,9 +135,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
               </Button>
             </>
           ) : (
-            <Button onClick={handleAddToMealPlan}>
-              Add to Meal
-            </Button>
+            <Button onClick={handleAddToMealPlan}>Add to Meal</Button>
           )}
         </div>
       </div>

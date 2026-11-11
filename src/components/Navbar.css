@@ -1,4 +1,3 @@
-
 .navbar,
 navbar {
   position: fixed;
@@ -7,14 +6,17 @@ navbar {
   transform: translateX(-50%); /* centers it over the phone column */
   width: 100%;
   max-width: 430px; /* same as #root in styles.css */
-  min-height: 90px;
-  padding-bottom: env(safe-area-inset-bottom, 0); /* clears the iPhone home bar */
+  min-height: 60px;
+  padding-bottom: env(
+    safe-area-inset-bottom,
+    0
+  ); /* clears the iPhone home bar */
   background-color: #e26d5a;
   display: flex;
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 -3px 6px rgba(43, 6, 30, 0.2);
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .nav-item {
