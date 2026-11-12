@@ -100,3 +100,47 @@
     height: 32px;
   }
 }
+
+.shopping-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.clear-checked-button,
+.clear-all-button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.clear-checked-button {
+  background-color: #f1e0c5;
+  color: #2b061e;
+  border: 1.5px solid #f1e0c5;
+}
+
+.clear-all-button {
+  background-color: #f1e0c5;
+  color: #2b061e;
+  border: 1.5px solid #f1e0c5;
+}
+
+.clear-checked-button:active,
+.clear-all-button:active {
+  transform: scale(0.97);
+}
+
+.empty-message {
+  text-align: center;
+  font-size: 18px;
+  color: #2b061e;
+  margin-top: 25px;
+}
