@@ -19,9 +19,14 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
 
   const [message, setMessage] = useState("");
 
+  const isRandomizer = location.pathname === "/individual-meal";
+
   function handleAddToMealPlan() {
     if (!recipe) return;
 
+    if (onAccept) {
+      onAccept(recipe);
+    }
     addToMealPlan(mealPlan, recipe, "Anyday", mealPlan.length + 1);
     navigate("/meal-plan");
   }
@@ -126,7 +131,7 @@ export default function IndividualMeal({ recipe: recipeProp, onAccept }) {
         {message && <p role="status">{message}</p>}
 
         <div className="individual-meal-buttons">
-          {onAccept ? (
+          {isRandomizer ? (
             <>
               <Button onClick={handleAccept}>Accept</Button>
 
