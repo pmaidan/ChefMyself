@@ -1,8 +1,7 @@
-
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { useState, useEffect } from "react";
 import { RecipeProvider } from "./context/RecipeContext";
-import RootLayout from "./layouts/RootLayout"; 
+import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home.jsx";
 import RecipeBank from "./pages/RecipeBank.jsx";
 import IndividualMeal from "./pages/IndividualMeal.jsx";
@@ -18,10 +17,7 @@ function App() {
   });
 
   useEffect(() => {
-    localStorage.setItem(
-      "shoppingItems",
-      JSON.stringify(shoppingItems)
-    );
+    localStorage.setItem("shoppingItems", JSON.stringify(shoppingItems));
   }, [shoppingItems]);
 
   function acceptRecipe(recipe) {
@@ -38,22 +34,22 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <RootLayout />, 
+      element: <RootLayout />,
       children: [
-        { index: true, element: <Home /> }, 
+        { index: true, element: <Home /> },
         { path: "recipe-bank", element: <RecipeBank /> },
         {
           path: "individual-meal",
           element: <IndividualMeal onAccept={acceptRecipe} />,
         },
-        { path: "recipe/:id", element: <IndividualMeal /> },
+        {
+          path: "recipe/:id",
+          element: <IndividualMeal onAccept={acceptRecipe} />,
+        },
         {
           path: "shopping-list",
           element: (
-            <ShoppingList
-              items={shoppingItems}
-              setItems={setShoppingItems}
-            />
+            <ShoppingList items={shoppingItems} setItems={setShoppingItems} />
           ),
         },
         { path: "meal-randomizer", element: <MealRandomizer /> },
